@@ -5,7 +5,6 @@ height: 101px;
 flex-direction: row;
 align-items: center;
 padding: 10px 15px 10px 15px;
-background-color: #009681;
 `;
 
 export const Labels = styled.View`

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   height: 68.5px;
   width: 268.38px;
   flex-direction: row;
@@ -10,6 +10,7 @@ export const Container = styled.View`
   background-color: rgba(240, 240, 240, 0.3);
   border-radius: 3px;
   justify-content: space-between;
+  
 `;
 
 export const Labels = styled.View`

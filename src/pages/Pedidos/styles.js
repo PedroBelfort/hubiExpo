@@ -6,12 +6,12 @@ flex: 1;
 `;
 
 export const Timeline = styled.FlatList`
-height: 87px;
+height: 70px;
+
 `;
 
 export const TimeLineContainer = styled.View`
  height: auto;
- background-color: #009681;
 `;
 
 export const Title = styled.Text`
@@ -27,8 +27,9 @@ height: 70px;
 flex-direction: row;
 align-items: center;
 padding-left: 14px;
+border-bottom-width: 1px;
+border-bottom-color: #E0E0E0;
 `;
-
 export const ListPedidos = styled.FlatList`
 height: 87px;
 `;

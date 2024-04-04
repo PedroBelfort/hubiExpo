@@ -2,10 +2,10 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Pedidos from "../pages/Pedidos";
 import Pedido from "../pages/Pedido";
-import  { HeaderBackground }  from './styles'
+import {LinearGradient} from 'expo-linear-gradient';
+import { Text  } from 'react-native-paper';
 const Stack = createNativeStackNavigator();
 
-const backgroundImage = require('../../assets/gradient-background.png');
 
 const StackRoutes = () => {
   return (
@@ -15,18 +15,29 @@ const StackRoutes = () => {
         headerTitleAlign: 'center', 
       }}
     >
-      <Stack.Screen
-        name="HUBICARE"
-        component={Pedidos}
-        options={{
-          headerTintColor: '#FFF', 
-          headerStyle: {
-            elevation: 0, // Remove elevation
-            shadowOpacity: 0, // Remove shadow
-            backgroundColor: '#009681' 
-          }
-        }}
-      />
+       <Stack.Screen
+    name="HUBICARE"
+    component={Pedidos}
+    options={{
+      headerTintColor: '#FFF',
+      headerStyle: {
+        elevation: 0, 
+        shadowOpacity: 0, 
+        backgroundColor: 'transparent', 
+      },
+      headerBackground: () => (
+        <LinearGradient
+          colors={['#009581', '#038F87', '#038F87',  '#038F87','#049187','#2554BD']}
+          style={{ flex: 1 }}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+        />
+      ),
+      headerTitle: () => (
+        <Text style={{ color: '#FFF', fontSize: 20 }}>HUBICARE</Text>
+      ),
+    }}
+  />
       <Stack.Screen
         name="Pedido"
         component={Pedido}
