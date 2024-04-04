@@ -5,6 +5,8 @@ import {LinearGradient} from 'expo-linear-gradient';
 import Header from '../../components/Header';
 import TimeLineItem from '../../components/TimelineItem';
 import PedidoItem from '../../components/PedidoItem';
+import { useNavigation } from "@react-navigation/native"; 
+
 import {
   Container,
   Timeline,
@@ -14,8 +16,15 @@ import {
   ListPedidos,
 } from './styles';
 
-export default function Pedidos({ navigation }) {
+export default function Pedidos() {
+
+  const navigation = useNavigation();
+
   const [visible, setVisible] = React.useState(true);
+
+  function navigatePedidoPage(){
+    navigation.navigate('Pedido')
+  }
 
   return (
  
@@ -32,7 +41,7 @@ export default function Pedidos({ navigation }) {
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             data={[1, 2, 3, 4, 5]}
-            renderItem={() => <TimeLineItem />}
+            renderItem={() => <TimeLineItem  />}
           />
         </TimeLineContainer>
         </LinearGradient>
@@ -43,7 +52,8 @@ export default function Pedidos({ navigation }) {
           horizontal={false}
           showsHorizontalScrollIndicator={false}
           data={[1, 2, 3, 4, 5, 7, 8, 9, 10]}
-          renderItem={() => <PedidoItem />}
+          renderItem={({item})=> <PedidoItem data={item} navigatePage={()=> navigatePedidoPage(item)} />}
+          keyExtractor={(item)=> String(item)}
         />
       </Container>
 

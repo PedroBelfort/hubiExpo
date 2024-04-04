@@ -34,7 +34,7 @@ const StackRoutes = () => {
         />
       ),
       headerTitle: () => (
-        <Text style={{ color: '#FFF', fontSize: 20 }}>HUBICARE</Text>
+        <Text  variant="labelLarge" style={{ color: '#FFF', fontSize: 20, fontWeight:600 }}>HUBICARE</Text>
       ),
     }}
   />

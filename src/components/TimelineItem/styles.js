@@ -10,7 +10,6 @@ export const Container = styled.TouchableOpacity`
   background-color: rgba(240, 240, 240, 0.3);
   border-radius: 3px;
   justify-content: space-between;
-  
 `;
 
 export const Labels = styled.View`
