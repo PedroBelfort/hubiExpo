@@ -41,6 +41,11 @@ const StackRoutes = () => {
       <Stack.Screen
         name="Pedido"
         component={Pedido}
+        options={{
+          headerTitle: () => (
+            <Text  variant="labelLarge" style={{ color: '#000000', fontSize: 20, fontWeight:600 }}>EUNICE SILVA</Text>
+          ),
+        }}
       />
     </Stack.Navigator>
   );
