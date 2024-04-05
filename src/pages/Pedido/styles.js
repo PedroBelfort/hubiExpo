@@ -20,6 +20,23 @@ export const ServicosSolicitados = styled.View`
   padding-bottom: 14px;
 `;
 
+
+export const ContainerDadosPessoais = styled.View`
+  height: auto;
+  flex-direction: column;
+  background-color: rgba(240, 240, 240, 0.0);
+  padding-left: 14px;
+  padding-bottom: 14px;
+`;
+
+export const ContainerButtons = styled.View`
+  height: 170px;
+  flex-direction: column;
+  background-color: transparent;
+  padding: 14px;
+  justify-content: space-between;
+`;
+
 export const PedidoHeader = styled.View`
 height: 70px;
 flex-direction: row;

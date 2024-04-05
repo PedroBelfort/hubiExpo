@@ -1,7 +1,9 @@
 import React from 'react';
-import { FlatList } from 'react-native'; // Adicionei a importação do FlatList
+import { FlatList, ScrollView } from 'react-native'; 
 import { Ionicons } from '@expo/vector-icons';
-import { Text, Chip, Avatar, Divider } from 'react-native-paper';
+import { Text, Chip, Avatar, Divider,Button } from 'react-native-paper';
+import PrimaryButton from '../../components/PrimaryButton';
+import { useNavigation } from "@react-navigation/native"; 
 import {
   Container,
   PedidoHeader,
@@ -11,15 +13,45 @@ import {
   AlertaStatus,
   ServicosSolicitados,
   Title,
-  LabelRegular
+  LabelRegular,
+  ContainerDadosPessoais,
+  ContainerButtons
 } from './styles';
 
 export default function Pedido() {
+
+  const servicos =[
+    { key: 'Higiene' },
+    { key: 'Companhia' },
+    { key: 'Preparacao Refeição' },
+    { key: 'Higiene' },
+    { key: 'Higiene' },
+    { key: 'Companhia' },
+    { key: 'Preparacao Refeição' },
+    { key: 'Higiene' },
+    { key: 'Higiene' },
+    { key: 'Companhia' },
+    { key: 'Preparacao Refeição' },
+    { key: 'Higiene' }, 
+  ]
+
+  const dadosPessoais = [
+    { key: 'Genero', value: 'Feminino' },
+    { key: 'Idade', value: 67 },
+    { key: 'Nome', value: 'Eunice Silva' },
+    { key: 'Nacionalidade', value: 'Portugal' }
+  ];
+
+
+  const navigation = useNavigation();
+
   return (
     <Container>
-      <PedidoHeader>
+        <PedidoHeader>
         <Text variant="titleMedium">Detalhes do Serviço</Text>
       </PedidoHeader>
+      <ScrollView showsVerticalScrollIndicator={true}>
+
       <Detalhes>
         <Avatar.Image
           source={{
@@ -36,7 +68,7 @@ export default function Pedido() {
         </Labels>
       </Detalhes>
       <AlertaStatus>
-        <Ionicons name="warning-outline" size={23} color={"#CB7C06"} ></Ionicons>
+        <Ionicons name="warning-outline" color={"#CB7C06"} ></Ionicons>
         <LabelAlerta>
           <Text variant="bodyMedium">Pendente: O pedido expira em 4:49 horas</Text>
         </LabelAlerta>
@@ -46,20 +78,30 @@ export default function Pedido() {
         <Title>
           Serviços Solicitados
         </Title>
-        <FlatList
-          data={[
-            { key: 'Higiene' },
-            { key: 'Companhia' },
-            { key: 'Preparacao Refeição' },
-            { key: 'Higiene' },
-            { key: 'Companhia' },
-            { key: 'Preparacao Refeição' },
-          ]}
-          renderItem={({ item }) => <LabelRegular>{item.key}</LabelRegular>}
-        />
-
+       
+        {servicos.map(item => (
+        <LabelRegular key={item.key}>
+          {item.key} 
+        </LabelRegular>
+      ))}
+     
       </ServicosSolicitados>
       <Divider />
+      <ContainerDadosPessoais>
+      <Title>Dados Pessoais</Title>
+  
+      {dadosPessoais.map(item => (
+        <LabelRegular key={item.key}>
+           {item.key}:  {item.value}
+        </LabelRegular>
+      ))}
+  
+      </ContainerDadosPessoais>
+      </ScrollView>
+      <ContainerButtons>
+      <PrimaryButton  label="Aceitar" hasBackground={true} onPress={() =>  navigation.goBack()} />
+      <PrimaryButton  label="Recusar" hasBackground={false} onPress={() => navigation.goBack()} /> 
+      </ContainerButtons>
     </Container>
   )
 }

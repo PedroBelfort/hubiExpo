@@ -6,6 +6,7 @@ import StackRoutes from "../routes/stakRoutes";
 import Recibos from "../pages/Recibos"; 
 import Perfil from "../pages/Perfil";
 import PedidoIcon from '../../assets/hubicare_icon.png';
+import Pedidos from "../pages/Pedidos";
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +21,7 @@ export default function Routes() {
                 options={{
                     tabBarIcon: ({ color, size,focused }) => (
                         <Image 
-                            source={PedidoIcon} // Use a imagem importada como source
+                            source={PedidoIcon}
                             style={{ width: size, height: size, tintColor: "#009681" }}
                         />
                     ),
