@@ -3,7 +3,7 @@ import { FlatList, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Text, Chip, Avatar, Divider,Button } from 'react-native-paper';
 import PrimaryButton from '../../components/PrimaryButton';
-import { useNavigation } from "@react-navigation/native"; 
+import { useNavigation, useRoute } from "@react-navigation/native"; 
 import {
   Container,
   PedidoHeader,
@@ -20,19 +20,13 @@ import {
 
 export default function Pedido() {
 
+  const navigation = useNavigation();
+  const route = useRoute();
+
   const servicos =[
     { key: 'Higiene' },
     { key: 'Companhia' },
     { key: 'Preparacao Refeição' },
-    { key: 'Higiene' },
-    { key: 'Higiene' },
-    { key: 'Companhia' },
-    { key: 'Preparacao Refeição' },
-    { key: 'Higiene' },
-    { key: 'Higiene' },
-    { key: 'Companhia' },
-    { key: 'Preparacao Refeição' },
-    { key: 'Higiene' }, 
   ]
 
   const dadosPessoais = [
@@ -42,13 +36,10 @@ export default function Pedido() {
     { key: 'Nacionalidade', value: 'Portugal' }
   ];
 
-
-  const navigation = useNavigation();
-
   return (
     <Container>
         <PedidoHeader>
-        <Text variant="titleMedium">Detalhes do Serviço</Text>
+        <Text variant="titleMedium">Detalhes do Serviço </Text>
       </PedidoHeader>
       <ScrollView showsVerticalScrollIndicator={true}>
 

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { ScrollView } from 'react-native';
+import React, {useState, useEffect} from "react";
+import { Modal, View , Button } from 'react-native';
 import { Banner, Text  } from 'react-native-paper';
 import {LinearGradient} from 'expo-linear-gradient';
 import Header from '../../components/Header';
@@ -19,11 +19,21 @@ import {
 export default function Pedidos() {
 
   const navigation = useNavigation();
+  const [visibleModal, setVisibleModal] = useState(false);
+  const [pedidoDetails, setPedidoDetails] = useState(null);
 
-  const [visible, setVisible] = React.useState(true);
+  const openModal = (details) => {
+    setPedidoDetails(details);
+    setVisibleModal(true);
+  };
 
-  function navigatePedidoPage(){
-    navigation.navigate('Pedido')
+  const closeModal = () => {
+    setVisibleModal(false);
+  };
+
+
+  function navigatePedidoPage(item){
+    navigation.navigate('Pedido',{id:item})
   }
 
   return (
@@ -52,10 +62,30 @@ export default function Pedidos() {
           horizontal={false}
           showsHorizontalScrollIndicator={false}
           data={[1, 2, 3, 4, 5, 7, 8, 9, 10]}
-          renderItem={({item})=> <PedidoItem data={item} navigatePage={()=> navigatePedidoPage(item)} />}
+          renderItem={({ item }) => (
+            <PedidoItem data={item} navigatePage={() => navigatePedidoPage(item)} 
+            openModal={openModal} />
+          )}
           keyExtractor={(item)=> String(item)}
         />
-      </Container>
+
+<Modal
+        visible={visibleModal}
+        animationType="slide"
+        onRequestClose={closeModal}
+      >
+        {/* Conteúdo do modal com os detalhes do pedido */}
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text>{pedidoDetails?.nome}</Text>
+          <Text>{pedidoDetails?.local}</Text>
+          <Text>{pedidoDetails?.horario}</Text>
+          <Text>{pedidoDetails?.status}</Text>
+          {/* Botão para fechar o modal */}
+          <Button title="Fechar" onPress={closeModal} />
+        </View>
+      </Modal>
+  </Container>
+
 
   );
 }
