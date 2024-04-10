@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { Modal, View, Button, ScrollView, StyleSheet, Dimensions } from 'react-native';
-import { Text,Divider } from 'react-native-paper';
-import { LinearGradient } from 'expo-linear-gradient';
+import { Modal, Text, TouchableOpacity, View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import Header from '../../components/Header';
 import TimeLineItem from '../../components/TimelineItem';
 import PedidoItem from '../../components/PedidoItem';
-import { useNavigation } from "@react-navigation/native";
-import { Ionicons } from '@expo/vector-icons';
-
+import { LinearGradient } from 'expo-linear-gradient';
 import {
   Container,
   Timeline,
@@ -17,19 +15,24 @@ import {
   ListPedidos,
   ModalContainer,
   ModalContent,
-  ModalText,
   ModalButtonContainer,
   ModalOption,
-  OptionCancelar
+  OptionCancelar,
+  CancelamentoContainer,
+  LabelOption,
+  TitleCancelamentoContainer,
+  AlertaCancelamento,
+  LabelCancelamento,
+  PriceCancelamentoContainer
 } from './styles';
 
-const windowHeight = Dimensions.get('window').height;
+
 
 export default function Pedidos() {
-
   const navigation = useNavigation();
   const [visibleModal, setVisibleModal] = useState(false);
   const [pedidoDetails, setPedidoDetails] = useState(null);
+  const [showCancelamento, setShowCancelamento] = useState(false);
 
   const openModal = (details) => {
     setPedidoDetails(details);
@@ -37,7 +40,7 @@ export default function Pedidos() {
   };
 
   const closeModal = () => {
-    setPedidoDetails(null); 
+    setPedidoDetails(null);
     setVisibleModal(false);
   };
 
@@ -80,7 +83,7 @@ export default function Pedidos() {
         keyExtractor={(item) => String(item)}
       />
 
-<Modal
+      <Modal
         visible={visibleModal}
         animationType="slide"
         onRequestClose={closeModal}
@@ -88,20 +91,40 @@ export default function Pedidos() {
       >
         <ModalContainer>
           <ModalContent>
-          <ModalButtonContainer onPress={closeModal}>
-            <Ionicons name="remove-outline" size={30} color={"black"}  />
-          </ModalButtonContainer>
-          <ModalOption>
-             <Text variant="titleMedium">Ver Serviço</Text>
-          </ModalOption>
-          <ModalOption>
-          <Ionicons name="trash" size={16} color={ "#CF5472"}  />
-             <OptionCancelar>Cancelar Serviço</OptionCancelar>
-          </ModalOption>
+            <ModalButtonContainer onPress={closeModal}>
+              <Ionicons name="remove-outline" size={30} color={"black"} />
+            </ModalButtonContainer>
+            <ModalOption>
+              <Text variant="titleMedium">Ver Serviço</Text>
+            </ModalOption>
+
+          
+
+            {showCancelamento && (
+              <CancelamentoContainer>
+                <TitleCancelamentoContainer>
+                  <LabelOption>Política de Cancelamento</LabelOption>
+                </TitleCancelamentoContainer>
+                <AlertaCancelamento>
+                  <Ionicons name="alert-circle" size={28} color={"#CF5472"} />
+                  <LabelCancelamento>
+                    <Text variant="bodyMedium">Cancelamento: Faltam menos de 24 horas para a realização do serviço. A taxa de serviço será cobrada para cobertura dos custos de reembolso do cliente.</Text>
+                  </LabelCancelamento>
+                </AlertaCancelamento>
+                <PriceCancelamentoContainer>
+                  <Text>Total:</Text>
+                  <Text>$1,80</Text>
+                  <Text onPress={() => setShowCancelamento(false)} >Não Cancelar</Text>
+                </PriceCancelamentoContainer>
+              </CancelamentoContainer>
+            )}
+            <ModalOption onPress={() => setShowCancelamento(true)}>
+              <Ionicons name="trash" size={16} color={"#CF5472"} />
+              <OptionCancelar variant="titleMedium">Cancelar Serviço</OptionCancelar>
+            </ModalOption>
           </ModalContent>
         </ModalContainer>
       </Modal>
     </Container>
   );
 }
-

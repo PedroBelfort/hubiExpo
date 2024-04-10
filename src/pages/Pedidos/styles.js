@@ -81,3 +81,44 @@ export const OptionCancelar = styled.Text`
  padding-left: 14px;
  font-size: 16px;
 `;
+
+export const CancelamentoContainer = styled.View`
+flex-direction: column;
+align-items: center;
+height: auto;
+border-bottom-width: 1px;
+border-bottom-color: #E0E0E0;
+`;
+
+export const LabelOption = styled.Text`
+  font-size: 18px;
+`;
+
+export const TitleCancelamentoContainer = styled.Text`
+height: 50px;
+width: 100%;
+padding: 14px;
+`;
+
+export const PriceCancelamentoContainer = styled.View`
+height: 50px;
+width: 100%;
+padding: 14px;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+`;
+
+export const AlertaCancelamento = styled.View`
+height:  auto;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+background-color: #F4E6E9;
+ padding: 14px;
+ border-radius: 5px;
+`;
+
+export const LabelCancelamento = styled.Text`
+ margin:12px;
+`;
