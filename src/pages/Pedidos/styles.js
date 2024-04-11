@@ -115,10 +115,41 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 background-color: #F4E6E9;
- padding: 14px;
- border-radius: 5px;
+padding: 14px;
+border-radius: 5px;
 `;
 
 export const LabelCancelamento = styled.Text`
  margin:12px;
+`;
+
+
+export const IniciarServicoContainer = styled.View`
+height: 105px;
+width: 100%;
+padding: 14px;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+background-color: aquamarine;
+`;
+
+export const CodeBackground = styled.View`
+   height: 65px;
+   width: 42.55px;
+   background-color: #F7F7F7;
+   border-radius: 10px;
+   align-items: center;
+   position: relative;
+`;
+
+
+export const CodeLabel = styled.Text`
+   height: 31px;
+   width: 25px;
+   font-weight: 600;
+   background-color: red;
+   position: absolute;
+   top: 50%;
+   left: 50%;
 `;

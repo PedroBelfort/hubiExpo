@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 import TimeLineItem from '../../components/TimelineItem';
 import PedidoItem from '../../components/PedidoItem';
 import { LinearGradient } from 'expo-linear-gradient';
+import { FAB } from 'react-native-paper';
 import {
   Container,
   Timeline,
@@ -23,26 +24,43 @@ import {
   TitleCancelamentoContainer,
   AlertaCancelamento,
   LabelCancelamento,
-  PriceCancelamentoContainer
+  PriceCancelamentoContainer,
+  IniciarServicoContainer,
+  CodeBackground,
+  CodeLabel
 } from './styles';
 
 
 
 export default function Pedidos() {
   const navigation = useNavigation();
-  const [visibleModal, setVisibleModal] = useState(false);
-  const [pedidoDetails, setPedidoDetails] = useState(null);
+  const [visibleModalPendente, setvisibleModalPendente] = useState(false);
+  const [visibleModalAtivo, setvisibleModalAtivo] = useState(false);
   const [showCancelamento, setShowCancelamento] = useState(false);
+  const [visibleModalStartService, setvisibleModalStartService] = useState(false);
+  
+  const openModalPendente = () => {
+    setvisibleModalPendente(true);
+  };
 
-  const openModal = (details) => {
-    setPedidoDetails(details);
-    setVisibleModal(true);
+  const openModalAtivo = () => {
+    setvisibleModalAtivo(true);
+  };
+
+  
+  const openModalStartService = () => {
+    setvisibleModalStartService(true);
   };
 
   const closeModal = () => {
-    setPedidoDetails(null);
-    setVisibleModal(false);
+    setvisibleModalPendente(false);
+    setvisibleModalAtivo(false);
+
   };
+
+  const closeModalStartService = () => {
+    setvisibleModalStartService(false);
+  }
 
   function navigatePedidoPage(item) {
     navigation.navigate('Pedido', { id: item });
@@ -62,7 +80,8 @@ export default function Pedidos() {
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             data={[1, 2, 3, 4, 5]}
-            renderItem={() => <TimeLineItem />}
+            renderItem={() => <TimeLineItem openModalAtivo={openModalAtivo}/>}
+   
           />
         </TimeLineContainer>
       </LinearGradient>
@@ -77,14 +96,14 @@ export default function Pedidos() {
           <PedidoItem
             data={item}
             navigatePage={() => navigatePedidoPage(item)}
-            openModal={openModal}
+            openModalPendente={openModalPendente}
           />
         )}
         keyExtractor={(item) => String(item)}
       />
 
       <Modal
-        visible={visibleModal}
+        visible={visibleModalPendente}
         animationType="slide"
         onRequestClose={closeModal}
         transparent={true}
@@ -122,6 +141,71 @@ export default function Pedidos() {
               <Ionicons name="trash" size={16} color={"#CF5472"} />
               <OptionCancelar variant="titleMedium">Cancelar Serviço</OptionCancelar>
             </ModalOption>
+          </ModalContent>
+        </ModalContainer>
+      </Modal>
+
+
+      <Modal
+        visible={visibleModalAtivo}
+        animationType="slide"
+        onRequestClose={closeModal}
+        transparent={true}
+      >
+        <ModalContainer>
+          <ModalContent>
+            <ModalButtonContainer onPress={closeModal}>
+              <Ionicons name="remove-outline" size={30} color={"black"} />
+            </ModalButtonContainer>
+            <ModalOption>
+              <Text variant="titleMedium">Ver Serviço</Text>
+            </ModalOption>
+            <ModalOption onPress={openModalStartService}>
+              <Text variant="titleMedium">Ver Codigo de Serviço</Text>
+            </ModalOption>
+            {showCancelamento && (
+              <CancelamentoContainer>
+                <TitleCancelamentoContainer>
+                  <LabelOption>Política de Cancelamento</LabelOption>
+                </TitleCancelamentoContainer>
+                <AlertaCancelamento>
+                  <Ionicons name="alert-circle" size={28} color={"#CF5472"} />
+                  <LabelCancelamento>
+                    <Text variant="bodyMedium">Cancelamento: Faltam menos de 24 horas para a realização do serviço. A taxa de serviço será cobrada para cobertura dos custos de reembolso do cliente.</Text>
+                  </LabelCancelamento>
+                </AlertaCancelamento>
+                <PriceCancelamentoContainer>
+                  <Text>Total:</Text>
+                  <Text>$1,80</Text>
+                  <Text onPress={() => setShowCancelamento(false)} >Não Cancelar</Text>
+                </PriceCancelamentoContainer>
+              </CancelamentoContainer>
+            )}
+            <ModalOption onPress={() => setShowCancelamento(true)}>
+              <Ionicons name="trash" size={16} color={"#CF5472"} />
+              <OptionCancelar variant="titleMedium">Cancelar Serviço</OptionCancelar>
+            </ModalOption>
+          </ModalContent>
+        </ModalContainer>
+      </Modal>
+
+      <Modal
+        visible={visibleModalStartService}
+        animationType="slide"
+        onRequestClose={closeModal}
+        transparent={true}
+      >
+        <ModalContainer>
+          <ModalContent>
+            <ModalButtonContainer onPress={closeModalStartService}>
+              <Ionicons name="remove-outline" size={30} color={"black"} />
+            </ModalButtonContainer>
+            <ModalOption>
+              <Text variant="titleMedium">Iniciar Serviço</Text>
+            </ModalOption>
+            <IniciarServicoContainer>
+                <CodeBackground><CodeLabel>6</CodeLabel></CodeBackground>
+            </IniciarServicoContainer>
           </ModalContent>
         </ModalContainer>
       </Modal>
