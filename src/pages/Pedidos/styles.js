@@ -131,7 +131,7 @@ padding: 14px;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
-background-color: aquamarine;
+
 `;
 
 export const CodeBackground = styled.View`
@@ -139,17 +139,19 @@ export const CodeBackground = styled.View`
    width: 42.55px;
    background-color: #F7F7F7;
    border-radius: 10px;
-   align-items: center;
-   position: relative;
+   display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+   align-items: center; 
+
+`;
+
+export const CodeLabel = styled.Text`
+   font-size: 21px ;
+   font-weight: 600;
 `;
 
 
-export const CodeLabel = styled.Text`
-   height: 31px;
-   width: 25px;
-   font-weight: 600;
-   background-color: red;
-   position: absolute;
-   top: 50%;
-   left: 50%;
+export const HorizontalSpace = styled.View`
+height: 14px;
+width: 100%;
 `;

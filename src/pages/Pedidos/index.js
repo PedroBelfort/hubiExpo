@@ -6,7 +6,7 @@ import Header from '../../components/Header';
 import TimeLineItem from '../../components/TimelineItem';
 import PedidoItem from '../../components/PedidoItem';
 import { LinearGradient } from 'expo-linear-gradient';
-import { FAB } from 'react-native-paper';
+import PrimaryButton from '../../components/PrimaryButton';
 import {
   Container,
   Timeline,
@@ -27,7 +27,8 @@ import {
   PriceCancelamentoContainer,
   IniciarServicoContainer,
   CodeBackground,
-  CodeLabel
+  CodeLabel,
+  HorizontalSpace
 } from './styles';
 
 
@@ -39,6 +40,7 @@ export default function Pedidos() {
   const [showCancelamento, setShowCancelamento] = useState(false);
   const [visibleModalStartService, setvisibleModalStartService] = useState(false);
   
+  const serviceCode = "692410";  
   const openModalPendente = () => {
     setvisibleModalPendente(true);
   };
@@ -55,7 +57,8 @@ export default function Pedidos() {
   const closeModal = () => {
     setvisibleModalPendente(false);
     setvisibleModalAtivo(false);
-
+    setvisibleModalPendente(false);
+    setvisibleModalStartService(false);
   };
 
   const closeModalStartService = () => {
@@ -204,8 +207,14 @@ export default function Pedidos() {
               <Text variant="titleMedium">Iniciar Serviço</Text>
             </ModalOption>
             <IniciarServicoContainer>
-                <CodeBackground><CodeLabel>6</CodeLabel></CodeBackground>
+            {serviceCode.split('').map((digit, index) => (
+          <CodeBackground key={index}>
+            <CodeLabel>{digit}</CodeLabel>
+          </CodeBackground>
+        ))}
             </IniciarServicoContainer>
+            <PrimaryButton  label="Iniciar" hasBackground={true} onPress={() => closeModalStartService()} />
+            <HorizontalSpace></HorizontalSpace>
           </ModalContent>
         </ModalContainer>
       </Modal>
