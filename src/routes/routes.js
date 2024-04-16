@@ -26,7 +26,8 @@ export default function Routes() {
                         />
                     ),
                     headerShown:false,
-                    title:'Pedidos'
+                    title:'Pedidos',
+                    headerTitleAlign: 'center'
                 }}
             />
         <Tab.Screen name="Recibos" component={Recibos} options={{

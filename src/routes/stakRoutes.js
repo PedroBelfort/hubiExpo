@@ -2,6 +2,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Pedidos from "../pages/Pedidos";
 import Pedido from "../pages/Pedido";
+import ServicoRealizado from "../pages/ServicoRealizado";
 import {LinearGradient} from 'expo-linear-gradient';
 import { Text  } from 'react-native-paper';
 const Stack = createNativeStackNavigator();
@@ -41,6 +42,16 @@ const StackRoutes = () => {
       <Stack.Screen
         name="Pedido"
         component={Pedido}
+        options={{
+          headerTitle: () => (
+            <Text  variant="labelLarge" style={{ color: '#000000', fontSize: 20, fontWeight:600 }}>EUNICE SILVA</Text>
+          ),
+        }}
+      />
+
+<Stack.Screen
+        name="ServicoRealizado"
+        component={ServicoRealizado}
         options={{
           headerTitle: () => (
             <Text  variant="labelLarge" style={{ color: '#000000', fontSize: 20, fontWeight:600 }}>EUNICE SILVA</Text>

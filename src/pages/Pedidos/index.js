@@ -32,7 +32,6 @@ import {
 } from './styles';
 
 
-
 export default function Pedidos() {
   const navigation = useNavigation();
   const [visibleModalPendente, setvisibleModalPendente] = useState(false);
@@ -40,8 +39,112 @@ export default function Pedidos() {
   const [showCancelamento, setShowCancelamento] = useState(false);
   const [visibleModalStartService, setvisibleModalStartService] = useState(false);
   
+  const dataItens = [
+    {
+      id: 1,
+      image: 'url_da_imagem_1',
+      nome: 'Sophia',
+      cidade: 'Lisboa',
+      distancia: '5 km',
+      horario: '10:00',
+      status: 'agendado',
+      dataAtendimento: '18 Jan',  
+    },
+    {
+      id: 2,
+      image: 'url_da_imagem_2',
+      nome: 'Liam',
+      cidade: 'Porto',
+      distancia: '12 km',
+      horario: '13:30',
+      status: 'agendado',
+      dataAtendimento: '19 Jan',  
+    },
+    {
+      id: 3,
+      image: 'url_da_imagem_3',
+      nome: 'Isabella',
+      cidade: 'Braga',
+      distancia: '8 km',
+      horario: '16:00',
+      status: 'pendente',
+      dataAtendimento: '20 Jan',  
+    },
+    {
+      id: 4,
+      image: 'url_da_imagem_4',
+      nome: 'Noah',
+      cidade: 'Coimbra',
+      distancia: '3 km',
+      horario: '09:45',
+      status: 'agendado',
+      dataAtendimento: '21 Jan',  
+    },
+    {
+      id: 5,
+      image: 'url_da_imagem_5',
+      nome: 'Olivia',
+      cidade: 'Faro',
+      distancia: '20 km',
+      horario: '11:20',
+      status: 'pendente',
+      dataAtendimento: '02 Fev',  
+    },
+    {
+      id: 6,
+      image: 'url_da_imagem_6',
+      nome: 'Elijah',
+      cidade: 'Évora',
+      distancia: '15 km',
+      horario: '14:45',
+      status: 'agendado',
+      dataAtendimento: '03 Fev',  
+    },
+    {
+      id: 7,
+      image: 'url_da_imagem_7',
+      nome: 'Ava',
+      cidade: 'Aveiro',
+      distancia: '6 km',
+      horario: '18:30',
+      status: 'agendado',
+      dataAtendimento: '04 Fev',  
+    },
+    {
+      id: 8,
+      image: 'url_da_imagem_8',
+      nome: 'William',
+      cidade: 'Guimarães',
+      distancia: '25 km',
+      horario: '12:00',
+      status: 'agendado',
+      dataAtendimento: '03 Mar',  
+    },
+    {
+      id: 9,
+      image: 'url_da_imagem_9',
+      nome: 'Amelia',
+      cidade: 'Setúbal',
+      distancia: '10 km',
+      horario: '17:15',
+      status: 'agendado',
+      dataAtendimento: '18 Mar', 
+    },
+    {
+      id: 10,
+      image: 'url_da_imagem_10',
+      nome: 'James',
+      cidade: 'Funchal',
+      distancia: '18 km',
+      horario: '19:00',
+      status: 'agendado',
+      dataAtendimento: '13 Abr', 
+    },
+  ];
+
+
   const serviceCode = "692410";  
-  const openModalPendente = () => {
+  const openModal = () => {
     setvisibleModalPendente(true);
   };
 
@@ -94,15 +197,15 @@ export default function Pedidos() {
       <ListPedidos
         horizontal={false}
         showsHorizontalScrollIndicator={false}
-        data={[1, 2, 3, 4, 5, 7, 8, 9, 10]}
+        data={dataItens}
         renderItem={({ item }) => (
           <PedidoItem
             data={item}
             navigatePage={() => navigatePedidoPage(item)}
-            openModalPendente={openModalPendente}
+            openModalPendente={openModal}
           />
         )}
-        keyExtractor={(item) => String(item)}
+        keyExtractor={(item) => String(item.id)}
       />
 
       <Modal
@@ -120,7 +223,7 @@ export default function Pedidos() {
               <Text variant="titleMedium">Ver Serviço</Text>
             </ModalOption>
 
-          
+    
 
             {showCancelamento && (
               <CancelamentoContainer>

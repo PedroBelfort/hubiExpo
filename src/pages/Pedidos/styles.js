@@ -8,7 +8,6 @@ flex: 1;
 
 export const Timeline = styled.FlatList`
 height: 70px;
-
 `;
 
 export const TimeLineContainer = styled.View`
@@ -34,7 +33,6 @@ border-bottom-color: #E0E0E0;
 export const ListPedidos = styled.FlatList`
 height: 87px;
 `;
-
 
 export const ModalContainer = styled.View`
   flex: 1;
@@ -123,7 +121,6 @@ export const LabelCancelamento = styled.Text`
  margin:12px;
 `;
 
-
 export const IniciarServicoContainer = styled.View`
 height: 105px;
 width: 100%;
@@ -131,7 +128,6 @@ padding: 14px;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
-
 `;
 
 export const CodeBackground = styled.View`
@@ -142,14 +138,12 @@ export const CodeBackground = styled.View`
    display: flex;
   justify-content: center; /* centraliza horizontalmente */
    align-items: center; 
-
 `;
 
 export const CodeLabel = styled.Text`
    font-size: 21px ;
    font-weight: 600;
 `;
-
 
 export const HorizontalSpace = styled.View`
 height: 14px;

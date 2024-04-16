@@ -3,37 +3,37 @@ import { Avatar, Text, IconButton, Chip } from 'react-native-paper';
 import { Container, Labels } from './styles'; 
 import { Ionicons } from '@expo/vector-icons';
 import { Modal } from "react-native";
+import Status from "../Status";
 
-export default function PedidoItem({data, navigatePage,openModalPendente }) {
+export default function PedidoItem({data, navigatePage = () => {}, openModalPendente = () => {}, onPress = () => {} }) {
   
 
 
-  if(data % 2 === 0 ){
-    return (
-      <Container activeOpacity={0.7} onPress={()=> openModalPendente()}>
-        <Avatar.Image
-          source={{
-            uri: "https://images.unsplash.com/photo-1526800544336-d04f0cbfd700?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          }}
-          size={48.5}
-          style={{ marginRight: 10, elevation: 5 }}
-        />
-        <Labels>
-          <Text variant="titleMedium">Claudio</Text>
-          <Text variant="bodySmall">Porto, 3km</Text>
-          <Text variant="labelSmall">10h00-11h00</Text>
-          <Chip type="outlined">Agendado</Chip>
-        </Labels>
-        <IconButton
-          icon={({ color, size }) => (
-            <Ionicons name="ellipsis-vertical" size={18} color={"black"} />
-          )}
-        />
-      </Container>
-    )
-  }
-
-
+    if(data.status === "agendado" ){
+      return (
+        <Container activeOpacity={0.7} onPress={()=> openModalPendente()}>
+          <Avatar.Image
+            source={{
+              uri: "https://images.unsplash.com/photo-1526800544336-d04f0cbfd700?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            }}
+            size={48.5}
+            style={{ marginRight: 10, elevation: 5 }}
+          />
+         <Labels>
+        <Text variant="titleMedium">{data.nome}</Text>
+        <Text variant="bodySmall">{data.cidade}, {data.distancia}</Text>
+        <Text variant="labelSmall">{data.dataAtendimento} - {data.horario}</Text>
+        <Status status={data.status}></Status>
+      </Labels> 
+          <IconButton
+            icon={({ color, size }) => (
+              <Ionicons name="ellipsis-vertical" size={18} color={"black"} />
+            )}
+          />
+        </Container>
+      )
+    }
+  
   return (
     <Container activeOpacity={0.7} onPress={()=> navigatePage(data)}>
       <Avatar.Image
@@ -44,10 +44,10 @@ export default function PedidoItem({data, navigatePage,openModalPendente }) {
         style={{ marginRight: 10, elevation: 5 }}
       />
       <Labels>
-        <Text variant="titleMedium">Eunice Silva</Text>
-        <Text variant="bodySmall">Porto, 3km</Text>
-        <Text variant="labelSmall">10h00-11h00</Text>
-        <Chip type="outlined">Pendente</Chip>
+        <Text variant="titleMedium">{data.nome}</Text>
+        <Text variant="bodySmall">{data.cidade}, {data.distancia}</Text>
+        <Text variant="labelSmall">{data.dataAtendimento} - {data.horario}</Text>
+        <Status status={data.status}></Status>
       </Labels>
       <IconButton
         icon={({ color, size }) => (
