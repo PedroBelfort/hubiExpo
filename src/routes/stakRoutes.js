@@ -49,15 +49,6 @@ const StackRoutes = () => {
         }}
       />
 
-<Stack.Screen
-        name="ServicoRealizado"
-        component={ServicoRealizado}
-        options={{
-          headerTitle: () => (
-            <Text  variant="labelLarge" style={{ color: '#000000', fontSize: 20, fontWeight:600 }}>EUNICE SILVA</Text>
-          ),
-        }}
-      />
     </Stack.Navigator>
   );
 }

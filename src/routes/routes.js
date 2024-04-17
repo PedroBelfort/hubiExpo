@@ -6,7 +6,7 @@ import StackRoutes from "../routes/stakRoutes";
 import Recibos from "../pages/Recibos"; 
 import Perfil from "../pages/Perfil";
 import PedidoIcon from '../../assets/hubicare_icon.png';
-import Pedidos from "../pages/Pedidos";
+import ReciboStackRoutes from "../routes/reciboStackRoutes";
 
 const Tab = createBottomTabNavigator();
 
@@ -30,13 +30,14 @@ export default function Routes() {
                     headerTitleAlign: 'center'
                 }}
             />
-        <Tab.Screen name="Recibos" component={Recibos} options={{
+        <Tab.Screen name="Recibos" component={ReciboStackRoutes} options={{
             tabBarIcon: ({color, size ,focused})=> {
                     if(focused){
                         return <Ionicons name="cart" size={size} color={"#009681"} ></Ionicons>
                     }
                        return <Ionicons name="cart-outline" size={size} color={"#009681"} ></Ionicons>
-            }
+            },
+            headerShown:false,
         }} />
         <Tab.Screen name="Perfil" component={Perfil} options={{
             tabBarIcon: ({color, size ,focused})=> {

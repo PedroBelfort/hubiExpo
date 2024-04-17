@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import { LinearGradient } from 'expo-linear-gradient';
 
 export const Container =styled.TouchableOpacity`
-
+width: 100%;
 `;
 
 export const GradientButton = styled(LinearGradient).attrs({
@@ -34,8 +34,6 @@ export const OutlineButton = styled.View`
     box-sizing: border-box;
   `;
   
-
-
 export const Text = styled.Text`
   display: flex;
   flex-direction: column;
