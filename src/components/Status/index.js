@@ -13,27 +13,27 @@ import {
 
 export default function Status({status}) {
   
-    if(status == "concluido")
+    if(status == "Concluido")
     return (
     <BackGroundAzul>
       <LabelAzul>{status}</LabelAzul>
     </BackGroundAzul>
   )
-  if(status == "pendente")
+  if(status == "Pendente")
   return (
   <BackGroundAmarelo>
     <LabelAmarelo>{status}</LabelAmarelo>
   </BackGroundAmarelo>
 )
 
-if(status == "agendado")
+if(status == "Agendado")
 return (
 <BackGroundVerde>
   <LabelVerde>{status}</LabelVerde>
 </BackGroundVerde>
 )
 
-if(status == "ativo")
+if(status == "Ativo")
 return (
 <BackGroundAtivo>
   <LabelAtivo>{status}</LabelAtivo>

@@ -28,7 +28,8 @@ import {
   IniciarServicoContainer,
   CodeBackground,
   CodeLabel,
-  HorizontalSpace
+  HorizontalSpace,
+  CloseModalContainer
 } from './styles';
 
 
@@ -47,7 +48,7 @@ export default function Pedidos() {
       cidade: 'Lisboa',
       distancia: '5 km',
       horario: '10:00',
-      status: 'agendado',
+      status: 'Agendado',
       dataAtendimento: '18 Jan',  
     },
     {
@@ -57,7 +58,7 @@ export default function Pedidos() {
       cidade: 'Porto',
       distancia: '12 km',
       horario: '13:30',
-      status: 'agendado',
+      status: 'Agendado',
       dataAtendimento: '19 Jan',  
     },
     {
@@ -67,7 +68,7 @@ export default function Pedidos() {
       cidade: 'Braga',
       distancia: '8 km',
       horario: '16:00',
-      status: 'pendente',
+      status: 'Pendente',
       dataAtendimento: '20 Jan',  
     },
     {
@@ -77,7 +78,7 @@ export default function Pedidos() {
       cidade: 'Coimbra',
       distancia: '3 km',
       horario: '09:45',
-      status: 'agendado',
+      status: 'Agendado',
       dataAtendimento: '21 Jan',  
     },
     {
@@ -87,7 +88,7 @@ export default function Pedidos() {
       cidade: 'Faro',
       distancia: '20 km',
       horario: '11:20',
-      status: 'pendente',
+      status: 'Pendente',
       dataAtendimento: '02 Fev',  
     },
     {
@@ -97,7 +98,7 @@ export default function Pedidos() {
       cidade: 'Évora',
       distancia: '15 km',
       horario: '14:45',
-      status: 'agendado',
+      status: 'Agendado',
       dataAtendimento: '03 Fev',  
     },
     {
@@ -107,7 +108,7 @@ export default function Pedidos() {
       cidade: 'Aveiro',
       distancia: '6 km',
       horario: '18:30',
-      status: 'agendado',
+      status: 'Agendado',
       dataAtendimento: '04 Fev',  
     },
     {
@@ -117,7 +118,7 @@ export default function Pedidos() {
       cidade: 'Guimarães',
       distancia: '25 km',
       horario: '12:00',
-      status: 'agendado',
+      status: 'Agendado',
       dataAtendimento: '03 Mar',  
     },
     {
@@ -127,7 +128,7 @@ export default function Pedidos() {
       cidade: 'Setúbal',
       distancia: '10 km',
       horario: '17:15',
-      status: 'agendado',
+      status: 'Agendado',
       dataAtendimento: '18 Mar', 
     },
     {
@@ -137,11 +138,10 @@ export default function Pedidos() {
       cidade: 'Funchal',
       distancia: '18 km',
       horario: '19:00',
-      status: 'agendado',
+      status: 'Agendado',
       dataAtendimento: '13 Abr', 
     },
   ];
-
 
   const serviceCode = "692410";  
   const openModal = () => {
@@ -152,7 +152,6 @@ export default function Pedidos() {
     setvisibleModalAtivo(true);
   };
 
-  
   const openModalStartService = () => {
     setvisibleModalStartService(true);
   };
@@ -162,6 +161,7 @@ export default function Pedidos() {
     setvisibleModalAtivo(false);
     setvisibleModalPendente(false);
     setvisibleModalStartService(false);
+    setShowCancelamento(false);
   };
 
   const closeModalStartService = () => {
@@ -202,7 +202,7 @@ export default function Pedidos() {
           <PedidoItem
             data={item}
             navigatePage={() => navigatePedidoPage(item)}
-            openModalPendente={openModal}
+            openModal={openModal}
           />
         )}
         keyExtractor={(item) => String(item.id)}
@@ -211,19 +211,16 @@ export default function Pedidos() {
       <Modal
         visible={visibleModalPendente}
         animationType="slide"
-        onRequestClose={closeModal}
         transparent={true}
-      >
-        <ModalContainer>
+      > 
+        <ModalContainer onPressOut={closeModal}>
           <ModalContent>
-            <ModalButtonContainer onPress={closeModal}>
+            <ModalButtonContainer onPressOut={closeModal} >
               <Ionicons name="remove-outline" size={30} color={"black"} />
             </ModalButtonContainer>
             <ModalOption>
               <Text variant="titleMedium">Ver Serviço</Text>
             </ModalOption>
-
-    
 
             {showCancelamento && (
               <CancelamentoContainer>
@@ -258,7 +255,7 @@ export default function Pedidos() {
         onRequestClose={closeModal}
         transparent={true}
       >
-        <ModalContainer>
+        <ModalContainer onPressOut={closeModal}>
           <ModalContent>
             <ModalButtonContainer onPress={closeModal}>
               <Ionicons name="remove-outline" size={30} color={"black"} />
@@ -301,7 +298,7 @@ export default function Pedidos() {
         onRequestClose={closeModal}
         transparent={true}
       >
-        <ModalContainer>
+        <ModalContainer onPressOut={closeModal}>
           <ModalContent>
             <ModalButtonContainer onPress={closeModalStartService}>
               <Ionicons name="remove-outline" size={30} color={"black"} />

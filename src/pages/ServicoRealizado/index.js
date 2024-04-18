@@ -27,7 +27,6 @@ export default function ServicoRealizado() {
            Servico De Enfermagem
         </BoldLabel>
         </DivContainer>
-         
         <DivContainer>
         <SmallLabel>
             17 Junho 2024 pelas 10:00 horas

@@ -4,7 +4,7 @@ import React from 'react'
 export default function Fatura() {
   return (
     <View>
-      <Text>Fatura</Text>
+      <Text>VOU ESPERAR A DEFINICAO DO REQUISITO</Text>
     </View>
   )
 }

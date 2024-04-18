@@ -1,11 +1,11 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
-  height: 68.5px;
+  height: auto;
   width: 268.38px;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
+  padding: 14px;
   margin-left: 14px;
   background-color: rgba(240, 240, 240, 0.3);
   border-radius: 3px;
@@ -14,8 +14,9 @@ export const Container = styled.TouchableOpacity`
 
 export const Labels = styled.View`
  width:151.88px;
- height: 40.5px;
+ height: auto;
  align-items: flex-start;
+ justify-content: space-between;
 `;
 
 

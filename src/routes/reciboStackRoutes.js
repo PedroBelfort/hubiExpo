@@ -18,7 +18,7 @@ const ReciboStackRoutes = () => {
       }}
     >
        <Stack.Screen
-    name="Recibos"
+    name="Lista de Recibos"
     component={Recibos}
     options={{
       headerTitle: () => (

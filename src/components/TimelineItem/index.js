@@ -2,6 +2,7 @@ import React from 'react';
 import { Avatar, Text, IconButton } from 'react-native-paper';
 import { Container, Labels } from './styles'; // Import your styled-components
 import { Ionicons } from '@expo/vector-icons';
+import Status from "../Status";
 
 const TimeLineItem = ({openModalAtivo}) => {
   return (
@@ -16,6 +17,7 @@ const TimeLineItem = ({openModalAtivo}) => {
       <Labels>
         <Text style={{ fontSize: 17, color: '#fff' }}>Pereira G.</Text>
         <Text style={{ color: '#fff', fontSize: 11, fontWeight: '500', marginTop: 3 }}>10h-11h00</Text>
+        <Status status={"Ativo"}></Status>
       </Labels>
       <IconButton
         icon={({ color, size }) => (

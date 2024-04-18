@@ -52,11 +52,9 @@ color: #799700;
 export const BackGroundAtivo = styled.View`
 height: auto;
 width: 94px;
-padding: 5px;
 background-color: #E7FBF9;
 border-radius: 15px;
 border: solid 2px #009681;
-margin-top: auto;
 color: #009681;
 align-items: center;
 `;

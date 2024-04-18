@@ -34,7 +34,7 @@ export const ListPedidos = styled.FlatList`
 height: 87px;
 `;
 
-export const ModalContainer = styled.View`
+export const ModalContainer = styled.TouchableOpacity`
   flex: 1;
   justify-content: flex-end;
   background-color: rgba(0, 0, 0, 0.5);

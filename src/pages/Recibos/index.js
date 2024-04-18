@@ -19,7 +19,7 @@ export default function Recibos() {
       cidade: 'Lisboa',
       distancia: '5 km',
       horario: '10:00',
-      status: 'concluido',
+      status: 'Concluido',
       dataAtendimento: '18 Jan',  
     },
     {
@@ -29,7 +29,7 @@ export default function Recibos() {
       cidade: 'Porto',
       distancia: '12 km',
       horario: '13:30',
-      status: 'concluido',
+      status: 'Concluido',
       dataAtendimento: '19 Jan',  
     },
     {
@@ -39,7 +39,7 @@ export default function Recibos() {
       cidade: 'Braga',
       distancia: '8 km',
       horario: '16:00',
-      status: 'concluido',
+      status: 'Concluido',
       dataAtendimento: '20 Jan',  
     },
     {
@@ -49,7 +49,7 @@ export default function Recibos() {
       cidade: 'Coimbra',
       distancia: '3 km',
       horario: '09:45',
-      status: 'concluido',
+      status: 'Concluido',
       dataAtendimento: '21 Jan',  
     },
     {
@@ -59,7 +59,7 @@ export default function Recibos() {
       cidade: 'Faro',
       distancia: '20 km',
       horario: '11:20',
-      status: 'concluido',
+      status: 'Concluido',
       dataAtendimento: '02 Fev',  
     },
     {
@@ -69,7 +69,7 @@ export default function Recibos() {
       cidade: 'Évora',
       distancia: '15 km',
       horario: '14:45',
-      status: 'concluido',
+      status: 'Concluido',
       dataAtendimento: '03 Fev',  
     },
     {
@@ -79,7 +79,7 @@ export default function Recibos() {
       cidade: 'Aveiro',
       distancia: '6 km',
       horario: '18:30',
-      status: 'concluido',
+      status: 'Concluido',
       dataAtendimento: '04 Fev',  
     },
     {
@@ -89,7 +89,7 @@ export default function Recibos() {
       cidade: 'Guimarães',
       distancia: '25 km',
       horario: '12:00',
-      status: 'concluido',
+      status: 'Concluido',
       dataAtendimento: '03 Mar',  
     },
     {
@@ -99,7 +99,7 @@ export default function Recibos() {
       cidade: 'Setúbal',
       distancia: '10 km',
       horario: '17:15',
-      status: 'concluido',
+      status: 'Concluido',
       dataAtendimento: '18 Mar', 
     },
     {
@@ -109,7 +109,7 @@ export default function Recibos() {
       cidade: 'Funchal',
       distancia: '18 km',
       horario: '19:00',
-      status: 'concluido',
+      status: 'Concluido',
       dataAtendimento: '13 Abr', 
     },
   ];

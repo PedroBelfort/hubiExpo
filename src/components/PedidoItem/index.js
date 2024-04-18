@@ -5,13 +5,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { Modal } from "react-native";
 import Status from "../Status";
 
-export default function PedidoItem({data, navigatePage = () => {}, openModalPendente = () => {}, onPress = () => {} }) {
+export default function PedidoItem({data, navigatePage = () => {}, openModal = () => {}, onPress = () => {} }) {
   
-
-
-    if(data.status === "agendado" ){
+    if(data.status === "Agendado" ){
       return (
-        <Container activeOpacity={0.7} onPress={()=> openModalPendente()}>
+        <Container activeOpacity={0.7} onPress={()=> openModal()}>
           <Avatar.Image
             source={{
               uri: "https://images.unsplash.com/photo-1526800544336-d04f0cbfd700?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
