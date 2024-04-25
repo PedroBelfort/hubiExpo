@@ -1,12 +1,22 @@
+import React from 'react';
 import Routes from './src/routes/routes';
 import { NavigationContainer } from '@react-navigation/native';
+import AuthStack from './src/routes/AuthStack'
 
-export default function App() {
+const App = () => {
+  const [userLoggedIn, setUserLoggedIn] = React.useState(false);
+
+
+  const handleUserLogin = () => {
+    setUserLoggedIn(true);
+  };
+
   return (
     <NavigationContainer>
-      <Routes></Routes>
+      {userLoggedIn ? <Routes /> : <AuthStack onUserLogin={handleUserLogin} />}
     </NavigationContainer>
-
   );
-}
+};
+
+export default App;
 

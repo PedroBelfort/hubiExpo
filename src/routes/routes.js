@@ -11,10 +11,11 @@ import ReciboStackRoutes from "../routes/reciboStackRoutes";
 const Tab = createBottomTabNavigator();
 
 export default function Routes() {
+    
   return (
     <Tab.Navigator 
       screenOptions={{tabBarShowLabel: false}}
-    >
+    >   
         <Tab.Screen 
                 name="Pedidos" 
                 component={StackRoutes} 
