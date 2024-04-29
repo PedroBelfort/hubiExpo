@@ -247,8 +247,7 @@ export default function Pedidos() {
           </ModalContent>
         </ModalContainer>
       </Modal>
-
-
+      
       <Modal
         visible={visibleModalAtivo}
         animationType="slide"

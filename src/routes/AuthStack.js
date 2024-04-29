@@ -5,6 +5,7 @@ import PreRegSplashScreen from "../pages/PreRegSplashScreen";
 import { Text  } from 'react-native-paper';
 import SignUp from "../pages/SignUp";
 import Routes from "../routes/routes";
+import Login from "../pages/Login";
 
 
 const Stack = createNativeStackNavigator();
@@ -37,6 +38,16 @@ const AuthStack = () => {
     options={{
       headerTitle: () => (
         <Text  variant="labelLarge" style={{ color: '#000000', fontSize: 20, fontWeight:600 }}>SignUp</Text>
+      ),
+    }}
+  />
+
+<Stack.Screen
+    name="Login"
+    component={Login}
+    options={{
+      headerTitle: () => (
+        <Text  variant="labelLarge" style={{ color: '#000000', fontSize: 20, fontWeight:600 }}>Login</Text>
       ),
     }}
   />

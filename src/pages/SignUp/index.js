@@ -108,6 +108,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
   };
 
   const validateCodeView = async () =>{
+
+    navigation.navigate('Login', {
+      resgisterInfo: resgisterInfo,
+    });   
+
+    /*
     console.log(view);
 
     if( view== 1 ){
@@ -142,6 +148,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
           console.log(error); 
         }  
     }
+    */
   }
     return (
         <View style={styles.maincontainer}>
