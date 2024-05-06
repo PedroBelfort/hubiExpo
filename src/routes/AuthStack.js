@@ -46,6 +46,7 @@ const AuthStack = () => {
     name="Login"
     component={Login}
     options={{
+      headerShown:false,
       headerTitle: () => (
         <Text  variant="labelLarge" style={{ color: '#000000', fontSize: 20, fontWeight:600 }}>Login</Text>
       ),
