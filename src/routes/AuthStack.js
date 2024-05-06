@@ -36,6 +36,7 @@ const AuthStack = () => {
     name="SignUp"
     component={SignUp}
     options={{
+      headerShown:false,
       headerTitle: () => (
         <Text  variant="labelLarge" style={{ color: '#000000', fontSize: 20, fontWeight:600 }}>SignUp</Text>
       ),
