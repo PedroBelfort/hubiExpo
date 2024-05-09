@@ -14,7 +14,7 @@ export default function Routes() {
     
   return (
     <Tab.Navigator 
-      screenOptions={{tabBarShowLabel: false}}
+      screenOptions={{tabBarShowLabel: false , headerTitleAlign: 'center'}}
     >   
         <Tab.Screen 
                 name="Pedidos" 
@@ -23,7 +23,7 @@ export default function Routes() {
                     tabBarIcon: ({ color, size,focused }) => (
                         <Image 
                             source={PedidoIcon}
-                            style={{ width: size, height: size, tintColor: "#009681" }}
+                            style={{ width: 21, height: 22}}
                         />
                     ),
                     headerShown:false,
@@ -40,7 +40,8 @@ export default function Routes() {
             },
             headerShown:false,
         }} />
-        <Tab.Screen name="Perfil" component={Perfil} options={{
+        <Tab.Screen name="André Santos" component={Perfil} options={{
+            
             tabBarIcon: ({color, size ,focused})=> {
                     if(focused){
                         return <Ionicons name="person-circle" size={size} color={"#009681"} ></Ionicons>
