@@ -2,7 +2,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {Ionicons} from '@expo/vector-icons'
 import { Image } from "react-native";
 
-import StackRoutes from "../routes/stakRoutes";
+import StackRoutes from "../routes/stakRoutes";  
+import PerfilStack from "../routes/perfilStack";  
 import Recibos from "../pages/Recibos"; 
 import Perfil from "../pages/Perfil";
 import PedidoIcon from '../../assets/hubicare_icon.png';
@@ -40,8 +41,8 @@ export default function Routes() {
             },
             headerShown:false,
         }} />
-        <Tab.Screen name="André Santos" component={Perfil} options={{
-            
+        <Tab.Screen name="André Santos" component={PerfilStack} options={{
+            headerShown:false,
             tabBarIcon: ({color, size ,focused})=> {
                     if(focused){
                         return <Ionicons name="person-circle" size={size} color={"#009681"} ></Ionicons>
