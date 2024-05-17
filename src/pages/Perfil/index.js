@@ -9,14 +9,36 @@ export default function Perfil() {
 
   const navigation = useNavigation();
 
-  const handleHeaderPress = () => {
+  const navigateToInformacaoDaConta = () => {
     navigation.navigate('InformacaoDaConta');
   };
+
+  const navigateToDadosDeFaturacao = () => {
+    navigation.navigate('DadosDeFaturacao');
+  };
+
+  const navigateToDadosPessoais = () => {
+    navigation.navigate('DadosPessoais');
+  };
+
+  const navigateToObterAjuda = () => {
+    navigation.navigate('ObterAjuda');
+  };
+
+
+  const navigateToInformacaoProfissional = () => {
+    navigation.navigate('InformacaoProfissional');
+  };
+
+  const navigateToSeguranca = () => {
+    navigation.navigate('Seguranca');
+  };
+
 
   return (
     <Container>
           <Divider />
-    <Header onPress={handleHeaderPress} >
+    <Header onPress={navigateToInformacaoDaConta} >
     <Avatar.Image
       source={{
         uri: "https://images.unsplash.com/photo-1526800544336-d04f0cbfd700?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -46,7 +68,7 @@ export default function Perfil() {
 
   <Divider />
 
-  <OptionContainer>
+  <OptionContainer onPress={navigateToDadosPessoais}>
   <LabelName>Informação Pessoal</LabelName>
   <IconButton
       icon={({ color, size }) => (
@@ -57,7 +79,7 @@ export default function Perfil() {
 
   <Divider />
 
-  <OptionContainer>
+  <OptionContainer onPress={navigateToDadosDeFaturacao}>
   <LabelName>Dados de Faturação</LabelName>
   <IconButton
       icon={({ color, size }) => (
@@ -68,7 +90,7 @@ export default function Perfil() {
 
   <Divider />
 
-  <OptionContainer>
+  <OptionContainer onPress={navigateToInformacaoProfissional}>
   <LabelName>Informação Profissional</LabelName>
   <IconButton
       icon={({ color, size }) => (
@@ -90,7 +112,7 @@ export default function Perfil() {
 
   <Divider />
 
-  <OptionContainer>
+  <OptionContainer onPress={navigateToSeguranca}>
   <LabelName>Segurança</LabelName>
   <IconButton
       icon={({ color, size }) => (
@@ -101,7 +123,7 @@ export default function Perfil() {
 
   <Divider />
 
-  <OptionContainer>
+  <OptionContainer onPress={navigateToObterAjuda} >
   <LabelName>Obter ajuda</LabelName>
   <IconButton
       icon={({ color, size }) => (
