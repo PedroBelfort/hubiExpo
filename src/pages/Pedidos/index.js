@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Text, TouchableOpacity, View } from "react-native";
+import { Modal, TouchableOpacity, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import Header from '../../components/Header';
@@ -12,6 +12,7 @@ import {
   Timeline,
   TimeLineContainer,
   Title,
+  TitleSection,
   ListHeader,
   ListPedidos,
   ModalContainer,
@@ -29,7 +30,8 @@ import {
   CodeBackground,
   CodeLabel,
   HorizontalSpace,
-  CloseModalContainer
+  CloseModalContainer,
+  Text
 } from './styles';
 
 
@@ -168,17 +170,17 @@ export default function Pedidos() {
     setvisibleModalStartService(false);
   }
 
-  function navigatePedidoPage(item) {
-    navigation.navigate('Pedido', { id: item });
+  function navigatePedidoPage() {
+    navigation.navigate('Pedido');
   }
 
   return (
     <Container>
       <LinearGradient
-        colors={['#009581', '#038F87', '#2554BD']}
-        style={{ flex: 0.8, margin: 0 }}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}>
+        colors={['#009681', '#2C4AC7']}
+        style={{ flex: 1 }}
+        start={{ x: 0.5, y: 0 }}
+        end={{ x: 0.5, y: 1 }}>
         <Header />
         <TimeLineContainer>
           <Title>Hoje</Title>
@@ -192,7 +194,7 @@ export default function Pedidos() {
         </TimeLineContainer>
       </LinearGradient>
       <ListHeader>
-        <Text variant="titleMedium">Pedidos</Text>
+        <TitleSection>Pedidos</TitleSection>
       </ListHeader>
       <ListPedidos
         horizontal={false}
@@ -213,24 +215,24 @@ export default function Pedidos() {
         animationType="slide"
         transparent={true}
       > 
-        <ModalContainer onPressOut={closeModal}>
+        <ModalContainer onPress={closeModal}>
           <ModalContent>
-            <ModalButtonContainer onPressOut={closeModal} >
-              <Ionicons name="remove-outline" size={30} color={"black"} />
+            <ModalButtonContainer onPress={closeModal} >
+              <Ionicons name="chevron-down-outline" size={25} color={"black"} />
             </ModalButtonContainer>
-            <ModalOption>
-              <Text variant="titleMedium">Ver Serviço</Text>
+            <ModalOption  onPress={() => navigatePedidoPage()} >
+              <Text>Ver Serviço</Text>
             </ModalOption>
 
             {showCancelamento && (
               <CancelamentoContainer>
                 <TitleCancelamentoContainer>
-                  <LabelOption>Política de Cancelamento</LabelOption>
+                  <Text>Política de Cancelamento</Text>
                 </TitleCancelamentoContainer>
                 <AlertaCancelamento>
                   <Ionicons name="alert-circle" size={28} color={"#CF5472"} />
                   <LabelCancelamento>
-                    <Text variant="bodyMedium">Cancelamento: Faltam menos de 24 horas para a realização do serviço. A taxa de serviço será cobrada para cobertura dos custos de reembolso do cliente.</Text>
+                    <Text>Cancelamento: Faltam menos de 24 horas para a realização do serviço. A taxa de serviço será cobrada para cobertura dos custos de reembolso do cliente.</Text>
                   </LabelCancelamento>
                 </AlertaCancelamento>
                 <PriceCancelamentoContainer>
@@ -242,7 +244,7 @@ export default function Pedidos() {
             )}
             <ModalOption onPress={() => setShowCancelamento(true)}>
               <Ionicons name="trash" size={16} color={"#CF5472"} />
-              <OptionCancelar variant="titleMedium">Cancelar Serviço</OptionCancelar>
+              <OptionCancelar  >Cancelar Serviço</OptionCancelar>
             </ModalOption>
           </ModalContent>
         </ModalContainer>
@@ -254,21 +256,21 @@ export default function Pedidos() {
         onRequestClose={closeModal}
         transparent={true}
       >
-        <ModalContainer onPressOut={closeModal}>
+        <ModalContainer onPress={closeModal}>
           <ModalContent>
             <ModalButtonContainer onPress={closeModal}>
-              <Ionicons name="remove-outline" size={30} color={"black"} />
+              <Ionicons name="chevron-down-outline" size={25} color={"black"} />
             </ModalButtonContainer>
-            <ModalOption>
-              <Text variant="titleMedium">Ver Serviço</Text>
+            <ModalOption onPress={() => navigatePedidoPage()}>
+              <Text >Ver Serviço</Text>
             </ModalOption>
             <ModalOption onPress={openModalStartService}>
-              <Text variant="titleMedium">Ver Codigo de Serviço</Text>
+              <Text  >Ver Codigo de Serviço</Text>
             </ModalOption>
             {showCancelamento && (
               <CancelamentoContainer>
                 <TitleCancelamentoContainer>
-                  <LabelOption>Política de Cancelamento</LabelOption>
+                  <Text>Política de Cancelamento</Text>
                 </TitleCancelamentoContainer>
                 <AlertaCancelamento>
                   <Ionicons name="alert-circle" size={28} color={"#CF5472"} />
@@ -285,7 +287,7 @@ export default function Pedidos() {
             )}
             <ModalOption onPress={() => setShowCancelamento(true)}>
               <Ionicons name="trash" size={16} color={"#CF5472"} />
-              <OptionCancelar variant="titleMedium">Cancelar Serviço</OptionCancelar>
+              <OptionCancelar>Cancelar Serviço</OptionCancelar>
             </ModalOption>
           </ModalContent>
         </ModalContainer>
@@ -297,13 +299,13 @@ export default function Pedidos() {
         onRequestClose={closeModal}
         transparent={true}
       >
-        <ModalContainer onPressOut={closeModal}>
+        <ModalContainer onPress={closeModal}>
           <ModalContent>
             <ModalButtonContainer onPress={closeModalStartService}>
-              <Ionicons name="remove-outline" size={30} color={"black"} />
+              <Ionicons name="chevron-down-outline" size={25} color={"black"} />
             </ModalButtonContainer>
             <ModalOption>
-              <Text variant="titleMedium">Iniciar Serviço</Text>
+              <Text  >Iniciar Serviço</Text>
             </ModalOption>
             <IniciarServicoContainer>
             {serviceCode.split('').map((digit, index) => (

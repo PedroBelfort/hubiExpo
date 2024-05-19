@@ -5,6 +5,7 @@ import Pedido from "../pages/Pedido";
 import ServicoRealizado from "../pages/ServicoRealizado";
 import {LinearGradient} from 'expo-linear-gradient';
 import { Text  } from 'react-native-paper';
+import {Title} from './styles'
 const Stack = createNativeStackNavigator();
 
 
@@ -28,14 +29,14 @@ const StackRoutes = () => {
       },
       headerBackground: () => (
         <LinearGradient
-          colors={['#009581', '#038F87', '#038F87',  '#038F87','#049187','#2554BD']}
+          colors={['#009681', '#009681']}
           style={{ flex: 1 }}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
         />
       ),
       headerTitle: () => (
-        <Text  variant="labelLarge" style={{ color: '#FFF', fontSize: 20, fontWeight:600 }}>HUBICARE</Text>
+        <Title>HUBICARE</Title>
       ),
     }}
   />

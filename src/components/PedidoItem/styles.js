@@ -14,8 +14,24 @@ export const Container = styled.TouchableOpacity`
 
 export const Labels = styled.View`
  width:231px;
- height: 95px;
+ height: 100%;
  align-items: flex-start;
+ 
+`;
+
+export const  LabelName = styled.Text`
+font-weight: 500;
+font-size: 16px;
+`;
+export const LabelSchedule = styled.Text`
+font-weight: 400;
+font-size: 16px;
+`;
+export const LabelLocalization = styled.Text`
+`;
+
+export const HorizontalSpace = styled.View`
+
 `;
 
 

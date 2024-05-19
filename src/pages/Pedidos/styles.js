@@ -4,23 +4,31 @@ import { Dimensions } from 'react-native';
 const windowHeight = Dimensions.get('window').height;
 export const Container = styled.View`
 flex: 1;
+background-color: #FFF;
 `;
 
 export const Timeline = styled.FlatList`
-height: 70px;
+height: auto;
 `;
 
 export const TimeLineContainer = styled.View`
  height: auto;
+ padding-left: 14px;
 `;
 
 export const Title = styled.Text`
- margin-left: 14px;
- margin-bottom: 14px;
- font-size: 20px;
- color: #fff;
- font-weight: 500;
+font-weight: 700;
+font-size: 18px;
+color: #FFF;
+padding-bottom: 9px;
 `;
+
+export const TitleSection = styled.Text`
+font-weight: 700;
+font-size: 18px;
+color: black;
+`;
+
 
 export const ListHeader = styled.View`
 height: 70px;
@@ -46,7 +54,6 @@ export const ModalContent = styled.View`
   max-height: ${windowHeight * 0.6}px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  padding-horizontal: 20px;
   padding-top: 5px;
 `;
 
@@ -71,11 +78,12 @@ align-items: center;
 padding-left: 14px;
 border-bottom-width: 1px;
 border-bottom-color: #E0E0E0;
+
 `;
 
 export const OptionCancelar = styled.Text`
  color : #CF5472;
- font-weight: 400;
+ font-weight: 500;
  padding-left: 14px;
  font-size: 16px;
 `;
@@ -86,10 +94,12 @@ align-items: center;
 height: auto;
 border-bottom-width: 1px;
 border-bottom-color: #E0E0E0;
+
 `;
 
 export const LabelOption = styled.Text`
   font-size: 18px;
+
 `;
 
 export const TitleCancelamentoContainer = styled.Text`
@@ -115,6 +125,8 @@ justify-content: space-between;
 background-color: #F4E6E9;
 padding: 14px;
 border-radius: 5px;
+margin-left: 24px;
+margin-right: 24px;
 `;
 
 export const LabelCancelamento = styled.Text`
@@ -148,4 +160,10 @@ export const CodeLabel = styled.Text`
 export const HorizontalSpace = styled.View`
 height: 14px;
 width: 100%;
+`;
+
+
+export const Text = styled.Text`
+font-weight: 500;
+font-size: 16px;
 `;

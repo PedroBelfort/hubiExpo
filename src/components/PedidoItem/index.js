@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { Avatar, Text, IconButton, Chip } from 'react-native-paper';
-import { Container, Labels } from './styles'; 
+import { Container, Labels,LabelName,LabelLocalization,LabelSchedule,HorizontalSpace } from './styles'; 
 import { Ionicons } from '@expo/vector-icons';
 import { Modal } from "react-native";
 import Status from "../Status";
+
 
 export default function PedidoItem({data, navigatePage = () => {}, openModal = () => {}, onPress = () => {} }) {
   
@@ -18,9 +19,9 @@ export default function PedidoItem({data, navigatePage = () => {}, openModal = (
             style={{ marginRight: 10, elevation: 5 }}
           />
          <Labels>
-        <Text variant="titleMedium">{data.nome}</Text>
-        <Text variant="bodySmall">{data.cidade}, {data.distancia}</Text>
-        <Text variant="labelSmall">{data.dataAtendimento} - {data.horario}</Text>
+        <LabelName >{data.nome}</LabelName>
+        <LabelLocalization >{data.cidade}, {data.distancia}</LabelLocalization>
+        <LabelSchedule >{data.dataAtendimento} - {data.horario}</LabelSchedule>
         <Status status={data.status}></Status>
       </Labels> 
           <IconButton
@@ -42,9 +43,9 @@ export default function PedidoItem({data, navigatePage = () => {}, openModal = (
         style={{ marginRight: 10, elevation: 5 }}
       />
       <Labels>
-        <Text variant="titleMedium">{data.nome}</Text>
-        <Text variant="bodySmall">{data.cidade}, {data.distancia}</Text>
-        <Text variant="labelSmall">{data.dataAtendimento} - {data.horario}</Text>
+      <LabelName >{data.nome}</LabelName>
+        <LabelLocalization >{data.cidade}, {data.distancia}</LabelLocalization>
+        <LabelSchedule >{data.dataAtendimento} - {data.horario}</LabelSchedule>
         <Status status={data.status}></Status>
       </Labels>
       <IconButton

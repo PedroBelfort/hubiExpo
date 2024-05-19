@@ -6,7 +6,7 @@ import StackRoutes from "../routes/stakRoutes";
 import PerfilStack from "../routes/perfilStack";  
 import Recibos from "../pages/Recibos"; 
 import Perfil from "../pages/Perfil";
-import PedidoIcon from '../../assets/hubicare_icon.png';
+import PedidoIcon from '../../assets/hubicare_icon_preto.png';
 import ReciboStackRoutes from "../routes/reciboStackRoutes";
 
 const Tab = createBottomTabNavigator();
@@ -21,12 +21,12 @@ export default function Routes() {
                 name="Pedidos" 
                 component={StackRoutes} 
                 options={{
-                    tabBarIcon: ({ color, size,focused }) => (
-                        <Image 
-                            source={PedidoIcon}
-                            style={{ width: 21, height: 22}}
-                        />
-                    ),
+                    tabBarIcon: ({color, size ,focused})=> {
+                        if(focused){
+                            return <Ionicons name="home" size={20} color={"#009681"} ></Ionicons>
+                        }
+                           return <Ionicons name="home-outline" size={20} ></Ionicons>
+                },
                     headerShown:false,
                     title:'Pedidos',
                     headerTitleAlign: 'center'
@@ -35,9 +35,9 @@ export default function Routes() {
         <Tab.Screen name="Recibos" component={ReciboStackRoutes} options={{
             tabBarIcon: ({color, size ,focused})=> {
                     if(focused){
-                        return <Ionicons name="cart" size={size} color={"#009681"} ></Ionicons>
+                        return <Ionicons name="cart" size={20} color={"#009681"} ></Ionicons>
                     }
-                       return <Ionicons name="cart-outline" size={size} color={"#009681"} ></Ionicons>
+                       return <Ionicons name="cart-outline" size={20}  ></Ionicons>
             },
             headerShown:false,
         }} />
@@ -47,7 +47,7 @@ export default function Routes() {
                     if(focused){
                         return <Ionicons name="person-circle" size={size} color={"#009681"} ></Ionicons>
                     }
-                       return <Ionicons name="person-circle-outline" size={size} color={"#009681"} ></Ionicons>
+                       return <Ionicons name="person-circle-outline" size={20} ></Ionicons>
             }
         }} />
    </Tab.Navigator>

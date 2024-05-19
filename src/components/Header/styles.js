@@ -12,3 +12,20 @@ export const Labels = styled.View`
 `;
 
 
+export const LabelCidade = styled.Text`
+font-weight: 300;
+font-size: 16px;
+color: #FFF;
+`;
+
+export const LabelName = styled.Text`
+font-weight: 400;
+font-size: 16px;
+color: #FFF;
+`;
+
+export const AvatarContainer = styled.View`
+width: 82.25px;
+height: 82.25px;
+border-radius:100px;
+`;

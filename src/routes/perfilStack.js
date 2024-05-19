@@ -8,6 +8,7 @@ import DadosPessoais from "../pages/DadosPessoais";
 import ObterAjuda from "../pages/ObterAjuda";
 import InformacaoProfissional from "../pages/InformacaoProfissional";
 import Seguranca from "../pages/Seguranca";
+import Documentos from "../pages/Documentos";
 
 const Stack = createNativeStackNavigator();
 
@@ -98,6 +99,17 @@ const PerfilStack = () => {
     }}
   />
 
+
+<Stack.Screen
+    name="Documentos"
+    component={Documentos}
+    options={{
+      headerShown:true,
+      headerTitle: () => (
+        <Text  variant="labelLarge" style={{ color: '#000000', fontSize: 20, fontWeight:600 }}>Documentos</Text>
+      ),
+    }}
+  />
 
     </Stack.Navigator>
   );

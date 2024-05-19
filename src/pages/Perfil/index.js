@@ -34,6 +34,10 @@ export default function Perfil() {
     navigation.navigate('Seguranca');
   };
 
+  const navigateToDocumentos = () => {
+    navigation.navigate('Documentos');
+  };
+
 
   return (
     <Container>
@@ -101,7 +105,7 @@ export default function Perfil() {
 
   <Divider />
 
-  <OptionContainer>
+  <OptionContainer onPress={navigateToDocumentos}>
   <LabelName>Documentos</LabelName>
   <IconButton
       icon={({ color, size }) => (
