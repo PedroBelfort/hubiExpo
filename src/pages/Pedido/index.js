@@ -39,7 +39,7 @@ export default function Pedido() {
   return (
     <Container>
         <PedidoHeader>
-        <Text variant="titleMedium">Detalhes do Serviço </Text>
+        <Text variant="titleMedium">Detalhes do Serviço</Text>
       </PedidoHeader>
       <ScrollView showsVerticalScrollIndicator={true}>
 

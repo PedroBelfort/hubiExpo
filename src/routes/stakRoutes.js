@@ -4,8 +4,8 @@ import Pedidos from "../pages/Pedidos";
 import Pedido from "../pages/Pedido";
 import ServicoRealizado from "../pages/ServicoRealizado";
 import {LinearGradient} from 'expo-linear-gradient';
-import { Text  } from 'react-native-paper';
-import {Title} from './styles'
+
+import {Title,TitleBlack} from './styles'
 const Stack = createNativeStackNavigator();
 
 
@@ -44,8 +44,9 @@ const StackRoutes = () => {
         name="Pedido"
         component={Pedido}
         options={{
+          headerShown:true,
           headerTitle: () => (
-            <Text  variant="labelLarge" style={{ color: '#000000', fontSize: 20, fontWeight:600 }}>EUNICE SILVA</Text>
+              <TitleBlack>EUNICE DA SILVA</TitleBlack>
           ),
         }}
       />
