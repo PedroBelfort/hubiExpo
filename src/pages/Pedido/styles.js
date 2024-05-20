@@ -5,10 +5,10 @@ flex: 1;
 background-color: #FFFFFF;
 `;
 export const Detalhes = styled.View`
-  height: 110px;
+  height: auto;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
+  padding: 14px;
   background-color: rgba(240, 240, 240, 0.0);
 `;
 
@@ -30,11 +30,12 @@ export const ContainerDadosPessoais = styled.View`
 `;
 
 export const ContainerButtons = styled.View`
-  height: 170px;
-  flex-direction: column;
+  height: auto;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: transparent;
   padding: 14px;
-  justify-content: space-between;
+
 `;
 
 export const PedidoHeader = styled.View`
@@ -53,9 +54,15 @@ export const Labels = styled.View`
  align-items: flex-start;
 `;
 
-export const LabelAlerta = styled.View`
- margin:12px;
- color: #A26305 ;
+export const ContainerAlerta = styled.View`
+
+
+`;
+
+export const LabelAlerta = styled.Text`
+color: #A26305;
+font-weight: 500;
+font-size: 16px;
 `;
 
 export const AlertaStatus = styled.View`
@@ -84,8 +91,28 @@ padding-right: 14px;
 
 export const LabelRegular = styled.Text`
 width: auto;
-font-size: 14px;
+font-size: 16px;
 font-weight: 500;
 color: black;
 padding-right: 14px;
 `; 
+
+export const LabelTitle = styled.Text`
+font-weight: 700;
+font-size: 18px;
+`;
+
+export const  LabelName = styled.Text`
+font-weight: 500;
+font-size: 16px;
+`;
+export const LabelSchedule = styled.Text`
+font-weight: 400;
+font-size: 16px;
+`;
+export const LabelLocalization = styled.Text`
+`;
+
+export const HorizontalSpace = styled.View`
+
+`;

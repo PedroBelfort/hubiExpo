@@ -305,7 +305,7 @@ export default function Pedidos() {
               <Ionicons name="chevron-down-outline" size={25} color={"black"} />
             </ModalButtonContainer>
             <ModalOption>
-              <Text  >Iniciar Serviço</Text>
+              <Text>Iniciar Serviço</Text>
             </ModalOption>
             <IniciarServicoContainer>
             {serviceCode.split('').map((digit, index) => (

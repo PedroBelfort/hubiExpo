@@ -2,8 +2,9 @@ import React from 'react';
 import { FlatList, ScrollView } from 'react-native'; 
 import { Ionicons } from '@expo/vector-icons';
 import { Text, Chip, Avatar, Divider,Button } from 'react-native-paper';
-import PrimaryButton from '../../components/PrimaryButton';
+import SmallButtonButton from '../../components/SmallButton';
 import { useNavigation, useRoute } from "@react-navigation/native"; 
+import Status from "../../components/Status";
 import {
   Container,
   PedidoHeader,
@@ -15,8 +16,15 @@ import {
   Title,
   LabelRegular,
   ContainerDadosPessoais,
-  ContainerButtons
-} from './styles';
+  ContainerButtons,
+  LabelTitle,
+  LabelName,
+  LabelLocalization,
+  LabelSchedule,
+  HorizontalSpace,
+  ContainerAlerta } from './styles'; 
+import SmallButton from '../../components/SmallButton';
+
 
 export default function Pedido() {
 
@@ -39,7 +47,7 @@ export default function Pedido() {
   return (
     <Container>
         <PedidoHeader>
-        <Text variant="titleMedium">Detalhes do Serviço</Text>
+        <LabelTitle>Detalhes do Serviço</LabelTitle>
       </PedidoHeader>
       <ScrollView showsVerticalScrollIndicator={true}>
 
@@ -52,17 +60,20 @@ export default function Pedido() {
           style={{ marginRight: 10, elevation: 5 }}
         />
         <Labels>
-          <Text variant="titleMedium">Eunice Silva</Text>
-          <Text variant="bodySmall">Porto, 3km</Text>
-          <Text variant="labelSmall">10h00-11h00</Text>
-          <Chip type="outlined">Pendente</Chip>
+         
+
+          <LabelName >Eunice Silva</LabelName>
+        <LabelLocalization >Porto, 3km</LabelLocalization>
+        <LabelSchedule >10h00-11h00</LabelSchedule>
+        <Status status={"Pendente"}></Status>
+
         </Labels>
       </Detalhes>
       <AlertaStatus>
-        <Ionicons name="warning-outline" color={"#CB7C06"} ></Ionicons>
-        <LabelAlerta>
-          <Text variant="bodyMedium">Pendente: O pedido expira em 4:49 horas</Text>
-        </LabelAlerta>
+        <Ionicons name="warning-outline" color={"#CB7C06"} size={25} ></Ionicons>
+        <ContainerAlerta>
+          <LabelAlerta>Pendente: O pedido expira em 4:49 horas</LabelAlerta>
+        </ContainerAlerta>
       </AlertaStatus>
       <Divider />
       <ServicosSolicitados>
@@ -88,11 +99,14 @@ export default function Pedido() {
       ))}
   
       </ContainerDadosPessoais>
+
       </ScrollView>
       <ContainerButtons>
-      <PrimaryButton  label="Aceitar" hasBackground={true} onPress={() =>  navigation.goBack()} />
-      <PrimaryButton  label="Recusar" hasBackground={false} onPress={() => navigation.goBack()} /> 
+      <SmallButtonButton  label="Recusar" hasBackground={false} onPress={() => navigation.goBack()} /> 
+      <SmallButtonButton  label="Aceitar" hasBackground={true} onPress={() =>  navigation.goBack()} />
       </ContainerButtons>
+
+
     </Container>
   )
 }

@@ -46,6 +46,7 @@ export const ModalContainer = styled.TouchableOpacity`
   flex: 1;
   justify-content: flex-end;
   background-color: rgba(0, 0, 0, 0.5);
+  
 `;
 
 export const ModalContent = styled.View`
@@ -55,6 +56,7 @@ export const ModalContent = styled.View`
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   padding-top: 5px;
+  padding: 12px;
 `;
 
 export const ModalText = styled.Text`

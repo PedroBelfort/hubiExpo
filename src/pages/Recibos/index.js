@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import {ListPedidos} from './styles'
+import {Container,ListPedidos} from './styles'
 import PedidoItem from '../../components/PedidoItem';
 import { useNavigation } from "@react-navigation/native";
 
@@ -115,6 +115,7 @@ export default function Recibos() {
   ];
 
   return (
+    <Container>
     <ListPedidos
     horizontal={false}
     showsHorizontalScrollIndicator={false}
@@ -124,5 +125,6 @@ export default function Recibos() {
        data={item}
        navigatePage={() => navigateServicoRealizadoPage()}/>
     )}/>
+     </Container>
   )
 }
