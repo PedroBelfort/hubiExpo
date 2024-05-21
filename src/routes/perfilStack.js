@@ -9,6 +9,7 @@ import ObterAjuda from "../pages/ObterAjuda";
 import InformacaoProfissional from "../pages/InformacaoProfissional";
 import Seguranca from "../pages/Seguranca";
 import Documentos from "../pages/Documentos";
+import InformacaoDaContaStack from "../routes/informacaoDaContaStack";
 
 const Stack = createNativeStackNavigator();
 
@@ -35,9 +36,9 @@ const PerfilStack = () => {
 
 <Stack.Screen
     name="InformacaoDaConta"
-    component={InformacaoDaConta}
+    component={InformacaoDaContaStack}
     options={{
-      headerShown:true,
+      headerShown:false,
       headerTitle: () => (
         <Text  variant="labelLarge" style={{ color: '#000000', fontSize: 20, fontWeight:600 }}>INFORMAÇÃO DA CONTA</Text>
       ),

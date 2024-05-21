@@ -40,9 +40,13 @@ export const LabelValue = styled.Text`
 font-size: 15px;
 font-weight: 120;
 padding-top: 10px;
-
 `;
 
 export const Labels = styled.View`
 
 `;
+
+export const BackgroundContainer = styled.View`
+background-color: #009681;
+`;
+

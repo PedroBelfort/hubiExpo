@@ -35,7 +35,6 @@ export const ContainerButtons = styled.View`
   justify-content: space-between;
   background-color: transparent;
   padding: 14px;
-
 `;
 
 export const PedidoHeader = styled.View`
