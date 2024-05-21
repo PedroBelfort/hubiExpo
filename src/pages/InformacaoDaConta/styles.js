@@ -30,8 +30,8 @@ justify-content: space-between;
 `;
 
 export const LabelTitle = styled.Text`
-font-size: 18px;
-font-weight: 500;
+font-size: 16px;
+font-weight: 400;
 padding-top: 10px;
 
 `;

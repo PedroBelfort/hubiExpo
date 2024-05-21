@@ -3,12 +3,12 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
 flex: 1;
-background-color: white;
+background-color: #FFF;
 `;
 
 
 export const Header = styled.TouchableOpacity`
-  height: 140px;
+  height: auto;
   flex-direction: row;
   align-items: center;
   padding: 20px 15px 20px 15px;
@@ -26,19 +26,18 @@ export const Labels = styled.View`
 `;
 
 export const LabelName = styled.Text`
-font-size: 18px;
-font-weight: 500;
+font-weight: 400;
+font-size: 16px;
 
 `;
 export const LabelTelefone = styled.Text`
-color: #333333;
-font-size: 14px;
-line-height: 16.41px;
-font-weight: 500;
+font-weight: 400;
+font-size: 16px;
 `;
 
 export const LabelEmail = styled.Text`
-padding-top: 3px;
+font-weight: 500;
+font-size: 14px;
 `;
 
 export const OptionContainer = styled.TouchableOpacity`
@@ -51,6 +50,12 @@ background-color: white;
 border-bottom: 1px solid #747474;
 justify-content: space-between;
 `;
+
+export const BackgroundContainer = styled.View`
+background-color: #009681;
+`;
+
+
 
 
 

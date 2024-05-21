@@ -20,7 +20,7 @@ export default function Recibo({showAlert}) {
   return (
     <Container>
     <Header>
-    <TitleLabel>O Serviço</TitleLabel>
+    <TitleLabel>O seu recibo</TitleLabel>
     </Header>
     <DivContainer>
       
@@ -33,12 +33,16 @@ export default function Recibo({showAlert}) {
     </DivContainer>
     <DivContainer>
       <BoldLabel>
-         Servico De Enfermagem
-      </BoldLabel>
+      Taxas de Serviço
+        </BoldLabel>
+        <BoldLabel>
+      
+        </BoldLabel>  
       </DivContainer>
+
       <DivContainer>
       <SmallLabel>
-          17 Junho 2024 pelas 10:00 horas
+      De 17 Junho 2024 a 17 de Julho de 2024
        </SmallLabel>
       </DivContainer>
       <HorizontalSpace />

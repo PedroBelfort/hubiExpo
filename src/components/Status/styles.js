@@ -3,10 +3,11 @@ import styled from 'styled-components/native';
 export const BackGroundAzul = styled.View`
 height: auto;
 width: 94px;
-padding: 10px;
+padding: 5px;
 background-color: #E6E9F7;
 border-radius: 15px;
 border: solid 2px #2C4AC7;
+margin-top: 7px;
 color: #2C4AC7;
 align-items: center;
 `;

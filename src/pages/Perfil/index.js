@@ -2,7 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { useNavigation } from "@react-navigation/native"; 
 import {  Chip, Avatar, Divider,Button,IconButton } from 'react-native-paper';
-import { Container, Labels,LabelName,LabelTelefone,LabelEmail,Header, OptionContainer } from './styles'; 
+import { Container, Labels,LabelName,LabelTelefone,LabelEmail,Header, OptionContainer,BackgroundContainer } from './styles'; 
 import { Ionicons } from '@expo/vector-icons';
 
 export default function Perfil() {
@@ -41,19 +41,21 @@ export default function Perfil() {
 
   return (
     <Container>
+      <BackgroundContainer>
           <Divider />
-    <Header onPress={navigateToInformacaoDaConta} >
+    <Header  activeOpacity={0.8} onPress={navigateToInformacaoDaConta} >
     <Avatar.Image
       source={{
         uri: "https://images.unsplash.com/photo-1526800544336-d04f0cbfd700?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       }}
-      size={48.5}
-      style={{ marginRight: 10, elevation: 5 }}
+      size={68}
+      style={{ marginRight: 15, elevation: 5 }}
     />
    <Labels>
   <LabelName >André Santos</LabelName>
   <LabelTelefone >+351 966 421 743</LabelTelefone>
   <LabelEmail >hello@hubicare.com</LabelEmail>
+
   </Labels> 
     <IconButton
       icon={({ color, size }) => (
@@ -61,7 +63,7 @@ export default function Perfil() {
       )}
     />
   </Header>
-  <OptionContainer>
+  <OptionContainer activeOpacity={0.8}  onPress={navigateToInformacaoDaConta}>
   <LabelName>Informação da Conta</LabelName>
   <IconButton
       icon={({ color, size }) => (
@@ -72,7 +74,7 @@ export default function Perfil() {
 
   <Divider />
 
-  <OptionContainer onPress={navigateToDadosPessoais}>
+  <OptionContainer activeOpacity={0.8} onPress={navigateToDadosPessoais}>
   <LabelName>Informação Pessoal</LabelName>
   <IconButton
       icon={({ color, size }) => (
@@ -83,7 +85,7 @@ export default function Perfil() {
 
   <Divider />
 
-  <OptionContainer onPress={navigateToDadosDeFaturacao}>
+  <OptionContainer activeOpacity={0.8} onPress={navigateToDadosDeFaturacao}>
   <LabelName>Dados de Faturação</LabelName>
   <IconButton
       icon={({ color, size }) => (
@@ -94,7 +96,7 @@ export default function Perfil() {
 
   <Divider />
 
-  <OptionContainer onPress={navigateToInformacaoProfissional}>
+  <OptionContainer activeOpacity={0.8} onPress={navigateToInformacaoProfissional}>
   <LabelName>Informação Profissional</LabelName>
   <IconButton
       icon={({ color, size }) => (
@@ -105,7 +107,7 @@ export default function Perfil() {
 
   <Divider />
 
-  <OptionContainer onPress={navigateToDocumentos}>
+  <OptionContainer activeOpacity={0.8} onPress={navigateToDocumentos}>
   <LabelName>Documentos</LabelName>
   <IconButton
       icon={({ color, size }) => (
@@ -116,7 +118,7 @@ export default function Perfil() {
 
   <Divider />
 
-  <OptionContainer onPress={navigateToSeguranca}>
+  <OptionContainer activeOpacity={0.8} onPress={navigateToSeguranca}>
   <LabelName>Segurança</LabelName>
   <IconButton
       icon={({ color, size }) => (
@@ -127,7 +129,7 @@ export default function Perfil() {
 
   <Divider />
 
-  <OptionContainer onPress={navigateToObterAjuda} >
+  <OptionContainer activeOpacity={0.8} onPress={navigateToObterAjuda} >
   <LabelName>Obter ajuda</LabelName>
   <IconButton
       icon={({ color, size }) => (
@@ -135,6 +137,7 @@ export default function Perfil() {
       )}
     />
   </OptionContainer>
+  </BackgroundContainer>
   </Container>
   )
 }

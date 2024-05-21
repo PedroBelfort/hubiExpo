@@ -40,6 +40,7 @@ border-bottom-color: #E0E0E0;
 `;
 export const ListPedidos = styled.FlatList`
 height: 87px;
+background-color: #009681;
 `;
 
 export const ModalContainer = styled.TouchableOpacity`

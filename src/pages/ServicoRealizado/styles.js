@@ -42,10 +42,13 @@ color: #333333;
 `;
 
 export const ButtonContainer = styled.View`
-height: 97px;
+height: auto;
 width: 100%;
+flex-direction: column;
 background-color: #FFFFFF;
-padding: 14px 14px 14px 14px;
-flex-direction: row;
-justify-content: space-between;
+padding: 14px;
+justify-content: space-around;
+`;
+export const HorizontalSpace = styled.View`
+height: 14px;
 `;

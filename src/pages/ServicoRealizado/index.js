@@ -1,6 +1,6 @@
 import {Text } from 'react-native'
 import React from 'react'
-import { Container, Header,TitleLabel,DivContainer, BoldLabel, SmallLabel,ButtonContainer} from './styles'
+import { Container, Header,TitleLabel,DivContainer, BoldLabel, SmallLabel,ButtonContainer, HorizontalSpace} from './styles'
 import PrimaryButton from '../../components/PrimaryButton'
 import { useNavigation, useRoute } from "@react-navigation/native"; 
 
@@ -34,10 +34,10 @@ export default function ServicoRealizado() {
         </DivContainer>
         <ButtonContainer>
         <PrimaryButton  label="Ver Fatura Cliente" hasBackground={false} onPress={() => navigation.navigate('Fatura')} />
-        </ButtonContainer>
-        <ButtonContainer>
+        <HorizontalSpace/>
         <PrimaryButton  label="Ver Recibo " hasBackground={false} onPress={() => navigation.navigate('Recibo')} />
-          </ButtonContainer>
+        </ButtonContainer>
+
     </Container>
   )
 }
