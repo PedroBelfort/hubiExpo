@@ -7,11 +7,10 @@ background-color: white;
 `;
 
 export const OptionContainer = styled.TouchableOpacity`
-height: 87px;
+height: auto;
 flex-direction: row;
 align-items: center;
-padding-left: 15px;
-padding-right: 15px;
+padding: 15px;
 background-color: white;
 border-bottom: 1px solid #747474;
 justify-content: space-between;
@@ -19,19 +18,18 @@ justify-content: space-between;
 
 
 export const ViewContainer = styled.View`
-height: 87px;
+height: auto;
 flex-direction: row;
 align-items: center;
-padding-left: 15px;
-padding-right: 15px;
+padding: 15px;
 background-color: white;
 border-bottom: 1px solid #747474;
 justify-content: space-between;
 `;
 
 export const LabelTitle = styled.Text`
-font-size: 18px;
-font-weight: 500;
+font-size: 16px;
+font-weight: 400;
 padding-top: 10px;
 
 `;

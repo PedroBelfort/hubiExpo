@@ -31,7 +31,7 @@ import {
   CodeLabel,
   HorizontalSpace,
   CloseModalContainer,
-  Text
+  Text,
 } from './styles';
 
 
@@ -192,6 +192,8 @@ export default function Pedidos() {
    
           />
         </TimeLineContainer>
+        <HorizontalSpace></HorizontalSpace>
+        <HorizontalSpace></HorizontalSpace>
       </LinearGradient>
       <ListHeader>
         <TitleSection>Pedidos</TitleSection>

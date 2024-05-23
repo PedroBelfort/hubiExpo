@@ -41,7 +41,7 @@ export default function PreRegSplashScreen() {
           <SmallLabel>Procuro um Cuidador, Enfermeiro ou Profissional de Limpeza</SmallLabel>
        </LabelArea>
        <IconContainer>
-       <Ionicons name="arrow-forward" size={25} color={"#FFF"}  onPress={() => handleIconPress(1)}/>
+       <Ionicons name="arrow-forward" size={25} color={"#1F1A26"}  onPress={() => handleIconPress(1)}/>
        </IconContainer>
       </ContentArea>
     </ImageContainer>
@@ -50,14 +50,12 @@ export default function PreRegSplashScreen() {
       <ContentArea>
        <LabelArea>
           <SmallLabel>Sou</SmallLabel>
-          <LargeLabel>Pessoa Tutor</LargeLabel>
+          <LargeLabel>Tutor</LargeLabel>
           <SmallLabel>Procuro um Cuidador, Enfermeiro ou Profissional de Limpeza</SmallLabel>
        </LabelArea>
-      
        <IconContainer>
-       <Ionicons name="arrow-forward" size={25} color={"#FFF"}  onPress={() => handleIconPress(2)}/>
+       <Ionicons name="arrow-forward" size={25} color={"#1F1A26"}  onPress={() => handleIconPress(2)}/>
        </IconContainer>
-
       </ContentArea>
     </ImageContainer>
     <ImageContainer>
@@ -65,11 +63,11 @@ export default function PreRegSplashScreen() {
       <ContentArea>
        <LabelArea>
           <SmallLabel>Sou</SmallLabel>
-          <LargeLabel>Pessoa Profissional</LargeLabel>
+          <LargeLabel>Profissional</LargeLabel>
           <SmallLabel>Procuro trabalho como Cuidador, Enfermeiro ou Profissional de Limpeza</SmallLabel>
        </LabelArea>
        <IconContainer>
-       <Ionicons name="arrow-forward" size={25} color={"#FFF"}  onPress={() => handleIconPress(3)}/>
+       <Ionicons name="arrow-forward" size={25} color={"#1F1A26"}  onPress={() => handleIconPress(3)}/>
        </IconContainer>
       </ContentArea>
     </ImageContainer>

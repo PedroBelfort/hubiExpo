@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   flex: 1;
   background-color: white;
+  padding: 15px;
 `;
 
 export const ImageContainer = styled.View`
@@ -12,6 +13,8 @@ export const ImageContainer = styled.View`
   height: 35%;
   width: 100%;
   margin-bottom: 1px;
+  padding-top: 7.5px;
+  padding-bottom:7.5px;
 `;
 
 export const UserOption = styled.Image`
@@ -19,6 +22,8 @@ export const UserOption = styled.Image`
   height: undefined;
   width: undefined;
   resize-mode: cover;
+  border-radius: 4px;
+
 `;
 
 export const ContentArea = styled.View`
@@ -36,6 +41,7 @@ padding-right: 14px;
 
 export const LabelArea = styled.View`
 padding-left: 14px;
+padding-bottom: 15px;
 width: 75%;
 `;
 
@@ -60,4 +66,8 @@ border-radius: 21px;
 background-color: #08CAAF;
 align-items: center;
 justify-content: center;
+z-index: 100;
+position: absolute;
+bottom: 16;
+right: 10;
 `;

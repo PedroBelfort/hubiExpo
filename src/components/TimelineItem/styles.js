@@ -14,6 +14,7 @@ export const ContainerOpacity = styled.TouchableOpacity`
   padding: 14px;
   background-color: rgba(240, 240, 240, 0.3);
   border-radius: 3px;
+  
 
 `;
 
