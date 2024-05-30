@@ -1,22 +1,11 @@
-import React from 'react';
-import Routes from './src/routes/routes';
+import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import AuthStack from './src/routes/AuthStack'
+import AuthStack from './src/routes/AuthStack';
+import ProfissionalTabNavigator from './src/routes/ProfissionalTabNavigator';
+import MainNavigator from './src/routes/MainNavigator';
 
-const App = () => {
-  const [userLoggedIn, setUserLoggedIn] = React.useState(false);
-
-
-  const handleUserLogin = () => {
-    setUserLoggedIn(true);
-  };
-
+export default function App() {
   return (
-    <NavigationContainer>
-      {userLoggedIn ? <Routes /> : <AuthStack onUserLogin={handleUserLogin} />}
-    </NavigationContainer>
+      <MainNavigator />
   );
-};
-
-export default App;
-
+}

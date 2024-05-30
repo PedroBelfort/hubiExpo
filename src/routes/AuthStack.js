@@ -4,7 +4,7 @@ import SplashScreen from "../pages/SplashScreen";
 import PreRegSplashScreen from "../pages/PreRegSplashScreen";
 import { Text  } from 'react-native-paper';
 import SignUp from "../pages/SignUp";
-import Routes from "../routes/routes";
+import ProfissionalTabNavigator from "./ProfissionalTabNavigator";
 import Login from "../pages/Login";
 
 
@@ -55,7 +55,7 @@ const AuthStack = () => {
   />
   <Stack.Screen
     name="Pedidos"
-    component={Routes}
+    component={ProfissionalTabNavigator}
     options={{
       headerShown:false,
                     title:'Pedidos',

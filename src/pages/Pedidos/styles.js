@@ -161,7 +161,7 @@ export const CodeLabel = styled.Text`
 `;
 
 export const HorizontalSpace = styled.View`
-height: 14px;
+height: 15px;
 width: 100%;
 `;
 
